@@ -59,7 +59,6 @@
 		5777ED6A13E82798004E12AC /* AuditElectricityCommunicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5777ED6813E82798004E12AC /* AuditElectricityCommunicationsViewController.xib */; };
 		5777ED7213E827F0004E12AC /* AuditElectricityEntertainmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5777ED7013E827F0004E12AC /* AuditElectricityEntertainmentViewController.m */; };
 		5777ED7313E827F0004E12AC /* AuditElectricityEntertainmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5777ED7113E827F0004E12AC /* AuditElectricityEntertainmentViewController.xib */; };
-		578CB46013E7729E00B7F628 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578CB45F13E7729E00B7F628 /* TestTableViewController.m */; };
 		5791A3A613F4212200E1305A /* anu_web_l.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791A3A513F4212200E1305A /* anu_web_l.png */; };
 		5791A3A813F4216200E1305A /* 725_ANUgreen_logo_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5791A3A713F4216200E1305A /* 725_ANUgreen_logo_small.jpg */; };
 		57AD062713E63E67007CAEEE /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD062513E63E67007CAEEE /* AboutAppViewController.m */; };
@@ -159,8 +158,6 @@
 		5777ED6F13E827F0004E12AC /* AuditElectricityEntertainmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditElectricityEntertainmentViewController.h; sourceTree = "<group>"; };
 		5777ED7013E827F0004E12AC /* AuditElectricityEntertainmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditElectricityEntertainmentViewController.m; sourceTree = "<group>"; };
 		5777ED7113E827F0004E12AC /* AuditElectricityEntertainmentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuditElectricityEntertainmentViewController.xib; path = Classes/AuditElectricityEntertainmentViewController.xib; sourceTree = "<group>"; };
-		578CB45E13E7729E00B7F628 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
-		578CB45F13E7729E00B7F628 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		5791A3A513F4212200E1305A /* anu_web_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anu_web_l.png; sourceTree = "<group>"; };
 		5791A3A713F4216200E1305A /* 725_ANUgreen_logo_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 725_ANUgreen_logo_small.jpg; sourceTree = "<group>"; };
 		57AD062413E63E67007CAEEE /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAppViewController.h; sourceTree = "<group>"; };
@@ -223,8 +220,6 @@
 				57E5F6D215AE62430011E417 /* ActionSheetPicker */,
 				1D3623240D0F684500981E51 /* ANUGreenAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ANUGreenAppDelegate.m */,
-				578CB45E13E7729E00B7F628 /* TestTableViewController.h */,
-				578CB45F13E7729E00B7F628 /* TestTableViewController.m */,
 				57EACC6413EA666C0044A60F /* AuditElectricityGroomingViewController.h */,
 				57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */,
 				5777ED5313E8266A004E12AC /* AuditElectricityKitchenViewController.h */,
@@ -528,7 +523,6 @@
 				28D7ACF80DDB3853001CB0EB /* ANUGreenViewController.m in Sources */,
 				57AD062713E63E67007CAEEE /* AboutAppViewController.m in Sources */,
 				57AD06FC13E667B7007CAEEE /* AboutANUGreenViewController.m in Sources */,
-				578CB46013E7729E00B7F628 /* TestTableViewController.m in Sources */,
 				5777EC8213E81A01004E12AC /* AuditResidenceViewController.m in Sources */,
 				5777ECB313E81E93004E12AC /* AuditLightingViewController.m in Sources */,
 				5777ECDA13E82091004E12AC /* AuditHeatingViewController.m in Sources */,
@@ -557,7 +551,9 @@
 				GCC_PREFIX_HEADER = GreenKey_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "GreenKey-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = GreenKey;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -570,7 +566,9 @@
 				GCC_PREFIX_HEADER = GreenKey_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "GreenKey-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = GreenKey;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
