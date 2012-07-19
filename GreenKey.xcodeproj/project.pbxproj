@@ -17,6 +17,7 @@
 		28D7ACF80DDB3853001CB0EB /* ANUGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ANUGreenViewController.m */; };
 		57448ACF13EA335200B24345 /* InitiativesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57448ACD13EA335200B24345 /* InitiativesViewController.m */; };
 		57448AD013EA335200B24345 /* InitiativesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57448ACE13EA335200B24345 /* InitiativesViewController.xib */; };
+		5745396015B7E276001D34A5 /* light-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 5745395F15B7E276001D34A5 /* light-80.png */; };
 		5777EC8213E81A01004E12AC /* AuditResidenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5777EC8013E81A01004E12AC /* AuditResidenceViewController.m */; };
 		5777EC8313E81A01004E12AC /* AuditResidenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5777EC8113E81A01004E12AC /* AuditResidenceViewController.xib */; };
 		5777ECB313E81E93004E12AC /* AuditLightingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5777ECB113E81E93004E12AC /* AuditLightingViewController.m */; };
@@ -112,6 +113,7 @@
 		57448ACC13EA335200B24345 /* InitiativesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitiativesViewController.h; sourceTree = "<group>"; };
 		57448ACD13EA335200B24345 /* InitiativesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitiativesViewController.m; sourceTree = "<group>"; };
 		57448ACE13EA335200B24345 /* InitiativesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InitiativesViewController.xib; path = Classes/InitiativesViewController.xib; sourceTree = "<group>"; };
+		5745395F15B7E276001D34A5 /* light-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-80.png"; sourceTree = "<group>"; };
 		5777EC7F13E81A01004E12AC /* AuditResidenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditResidenceViewController.h; sourceTree = "<group>"; };
 		5777EC8013E81A01004E12AC /* AuditResidenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditResidenceViewController.m; sourceTree = "<group>"; };
 		5777EC8113E81A01004E12AC /* AuditResidenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuditResidenceViewController.xib; path = Classes/AuditResidenceViewController.xib; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				57A84E8C15B7C3120030180C /* Laptop.1.png */,
 				57A84E8D15B7C3120030180C /* LCD tv.1.png */,
 				57A84E8E15B7C3120030180C /* light-40.png */,
+				5745395F15B7E276001D34A5 /* light-80.png */,
 				57A84E8F15B7C3120030180C /* Lighting.1.png */,
 				57A84E9015B7C3120030180C /* Linear Fluorescent lamp.png */,
 				57A84E9115B7C3120030180C /* loudspeaker.1.png */,
@@ -523,6 +526,7 @@
 				57A84EF615B7C33B0030180C /* AUTHORS in Resources */,
 				57A84EF715B7C33B0030180C /* LICENSE in Resources */,
 				57A84EFD15B7C33B0030180C /* README.md in Resources */,
+				5745396015B7E276001D34A5 /* light-80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,7 +33,7 @@
 	if (!sections) {
 	
 		NSString *aString[3]; 
-		aString[0] = @"";
+		aString[0] = @"Personal Data";
 		aString[1] = @"Scorecard";
 		aString[2] = @"Result";
 		
@@ -89,7 +89,7 @@
     if (!scorecardImages) {
         
         UIImage *images[4];
-        images[0] = [UIImage imageNamed:@"light-40.png"];
+        images[0] = [UIImage imageNamed:@"light-80.png"];
         images[1] = [UIImage imageNamed:@"elecplug-40.png"];
         images[2] = [UIImage imageNamed:@"gas-40.png"];
         images[3] = [UIImage imageNamed:@"water-40.png"];
