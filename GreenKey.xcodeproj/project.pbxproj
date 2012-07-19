@@ -87,14 +87,6 @@
 		57A84EFB15B7C33B0030180C /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EDA15B7C33B0030180C /* ActionSheetStringPicker.m */; };
 		57A84EFC15B7C33B0030180C /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EDC15B7C33B0030180C /* DistancePickerView.m */; };
 		57A84EFD15B7C33B0030180C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 57A84EDD15B7C33B0030180C /* README.md */; };
-		57A84EFE15B7C33B0030180C /* ActionSheetPicker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A84EDF15B7C33B0030180C /* ActionSheetPicker-Info.plist */; };
-		57A84EFF15B7C33B0030180C /* ActionSheetPickerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A84EE415B7C33B0030180C /* ActionSheetPickerViewController-iPad.xib */; };
-		57A84F0015B7C33B0030180C /* ActionSheetPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A84EE515B7C33B0030180C /* ActionSheetPickerViewController.xib */; };
-		57A84F0115B7C33B0030180C /* ActionSheetPickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EE815B7C33B0030180C /* ActionSheetPickerAppDelegate.m */; };
-		57A84F0215B7C33B0030180C /* ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EEA15B7C33B0030180C /* ActionSheetPickerViewController.m */; };
-		57A84F0315B7C33B0030180C /* NSDate+TCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EEC15B7C33B0030180C /* NSDate+TCUtils.m */; };
-		57A84F0415B7C33B0030180C /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A84EEE15B7C33B0030180C /* MainWindow-iPad.xib */; };
-		57A84F0615B7C33B0030180C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A84EF015B7C33B0030180C /* MainWindow.xib */; };
 		57A84F0D15B7C6040030180C /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84F0B15B7C4970030180C /* TestTableViewController.m */; };
 		57AD062713E63E67007CAEEE /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD062513E63E67007CAEEE /* AboutAppViewController.m */; };
 		57AD062813E63E67007CAEEE /* AboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57AD062613E63E67007CAEEE /* AboutAppViewController.xib */; };
@@ -103,16 +95,6 @@
 		57EACC6713EA666C0044A60F /* AuditElectricityGroomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */; };
 		57EACC6813EA666C0044A60F /* AuditElectricityGroomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		57A84F0815B7C33B0030180C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57A84EE015B7C33B0030180C /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = ActionSheetPicker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -215,20 +197,6 @@
 		57A84EDB15B7C33B0030180C /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
 		57A84EDC15B7C33B0030180C /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
 		57A84EDD15B7C33B0030180C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		57A84EDF15B7C33B0030180C /* ActionSheetPicker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-Info.plist"; sourceTree = "<group>"; };
-		57A84EE015B7C33B0030180C /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ActionSheetPicker.xcodeproj; sourceTree = "<group>"; };
-		57A84EE315B7C33B0030180C /* ActionSheetPicker_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker_Prefix.pch; sourceTree = "<group>"; };
-		57A84EE415B7C33B0030180C /* ActionSheetPickerViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ActionSheetPickerViewController-iPad.xib"; sourceTree = "<group>"; };
-		57A84EE515B7C33B0030180C /* ActionSheetPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionSheetPickerViewController.xib; sourceTree = "<group>"; };
-		57A84EE715B7C33B0030180C /* ActionSheetPickerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerAppDelegate.h; sourceTree = "<group>"; };
-		57A84EE815B7C33B0030180C /* ActionSheetPickerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerAppDelegate.m; sourceTree = "<group>"; };
-		57A84EE915B7C33B0030180C /* ActionSheetPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerViewController.h; sourceTree = "<group>"; };
-		57A84EEA15B7C33B0030180C /* ActionSheetPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerViewController.m; sourceTree = "<group>"; };
-		57A84EEB15B7C33B0030180C /* NSDate+TCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCUtils.h"; sourceTree = "<group>"; };
-		57A84EEC15B7C33B0030180C /* NSDate+TCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCUtils.m"; sourceTree = "<group>"; };
-		57A84EEE15B7C33B0030180C /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
-		57A84EEF15B7C33B0030180C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		57A84EF015B7C33B0030180C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		57A84F0A15B7C4970030180C /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		57A84F0B15B7C4970030180C /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		57AD062413E63E67007CAEEE /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAppViewController.h; sourceTree = "<group>"; };
@@ -419,7 +387,6 @@
 				57A84ED115B7C33B0030180C /* LICENSE */,
 				57A84ED215B7C33B0030180C /* Pickers */,
 				57A84EDD15B7C33B0030180C /* README.md */,
-				57A84EDE15B7C33B0030180C /* Sample */,
 			);
 			path = "TimCinel-ActionSheetPicker-5937d2f";
 			sourceTree = "<group>";
@@ -439,51 +406,6 @@
 				57A84EDC15B7C33B0030180C /* DistancePickerView.m */,
 			);
 			path = Pickers;
-			sourceTree = "<group>";
-		};
-		57A84EDE15B7C33B0030180C /* Sample */ = {
-			isa = PBXGroup;
-			children = (
-				57A84EDF15B7C33B0030180C /* ActionSheetPicker-Info.plist */,
-				57A84EE015B7C33B0030180C /* ActionSheetPicker.xcodeproj */,
-				57A84EE315B7C33B0030180C /* ActionSheetPicker_Prefix.pch */,
-				57A84EE415B7C33B0030180C /* ActionSheetPickerViewController-iPad.xib */,
-				57A84EE515B7C33B0030180C /* ActionSheetPickerViewController.xib */,
-				57A84EE615B7C33B0030180C /* Classes */,
-				57A84EED15B7C33B0030180C /* iPad */,
-				57A84EEF15B7C33B0030180C /* main.m */,
-				57A84EF015B7C33B0030180C /* MainWindow.xib */,
-			);
-			path = Sample;
-			sourceTree = "<group>";
-		};
-		57A84EE115B7C33B0030180C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				57A84F0915B7C33B0030180C /* ActionSheetPicker.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		57A84EE615B7C33B0030180C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				57A84EE715B7C33B0030180C /* ActionSheetPickerAppDelegate.h */,
-				57A84EE815B7C33B0030180C /* ActionSheetPickerAppDelegate.m */,
-				57A84EE915B7C33B0030180C /* ActionSheetPickerViewController.h */,
-				57A84EEA15B7C33B0030180C /* ActionSheetPickerViewController.m */,
-				57A84EEB15B7C33B0030180C /* NSDate+TCUtils.h */,
-				57A84EEC15B7C33B0030180C /* NSDate+TCUtils.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		57A84EED15B7C33B0030180C /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				57A84EEE15B7C33B0030180C /* MainWindow-iPad.xib */,
-			);
-			path = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,28 +449,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 57A84EE115B7C33B0030180C /* Products */;
-					ProjectRef = 57A84EE015B7C33B0030180C /* ActionSheetPicker.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* GreenKey */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		57A84F0915B7C33B0030180C /* ActionSheetPicker.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ActionSheetPicker.app;
-			remoteRef = 57A84F0815B7C33B0030180C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -617,11 +523,6 @@
 				57A84EF615B7C33B0030180C /* AUTHORS in Resources */,
 				57A84EF715B7C33B0030180C /* LICENSE in Resources */,
 				57A84EFD15B7C33B0030180C /* README.md in Resources */,
-				57A84EFE15B7C33B0030180C /* ActionSheetPicker-Info.plist in Resources */,
-				57A84EFF15B7C33B0030180C /* ActionSheetPickerViewController-iPad.xib in Resources */,
-				57A84F0015B7C33B0030180C /* ActionSheetPickerViewController.xib in Resources */,
-				57A84F0415B7C33B0030180C /* MainWindow-iPad.xib in Resources */,
-				57A84F0615B7C33B0030180C /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,9 +555,6 @@
 				57A84EFA15B7C33B0030180C /* ActionSheetDistancePicker.m in Sources */,
 				57A84EFB15B7C33B0030180C /* ActionSheetStringPicker.m in Sources */,
 				57A84EFC15B7C33B0030180C /* DistancePickerView.m in Sources */,
-				57A84F0115B7C33B0030180C /* ActionSheetPickerAppDelegate.m in Sources */,
-				57A84F0215B7C33B0030180C /* ActionSheetPickerViewController.m in Sources */,
-				57A84F0315B7C33B0030180C /* NSDate+TCUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
