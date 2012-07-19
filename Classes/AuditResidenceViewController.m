@@ -54,7 +54,7 @@
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
-    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:buildingList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select a Residence" rows:buildingList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
     
 }
 
