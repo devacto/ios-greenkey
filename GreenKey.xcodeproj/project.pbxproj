@@ -93,6 +93,9 @@
 		57AD062813E63E67007CAEEE /* AboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57AD062613E63E67007CAEEE /* AboutAppViewController.xib */; };
 		57AD06FC13E667B7007CAEEE /* AboutANUGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD06FA13E667B7007CAEEE /* AboutANUGreenViewController.m */; };
 		57AD06FD13E667B7007CAEEE /* AboutANUGreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57AD06FB13E667B7007CAEEE /* AboutANUGreenViewController.xib */; };
+		57BF3FD315BFB0B400B763AB /* greenapp-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD215BFB0B400B763AB /* greenapp-80.png */; };
+		57BF3FD515BFB25000B763AB /* greenapp-40-highres.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */; };
+		57BF3FD715BFB2F900B763AB /* greenapp-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD615BFB2F900B763AB /* greenapp-60.png */; };
 		57EACC6713EA666C0044A60F /* AuditElectricityGroomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */; };
 		57EACC6813EA666C0044A60F /* AuditElectricityGroomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */; };
 /* End PBXBuildFile section */
@@ -207,6 +210,9 @@
 		57AD06F913E667B7007CAEEE /* AboutANUGreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutANUGreenViewController.h; sourceTree = "<group>"; };
 		57AD06FA13E667B7007CAEEE /* AboutANUGreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutANUGreenViewController.m; sourceTree = "<group>"; };
 		57AD06FB13E667B7007CAEEE /* AboutANUGreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutANUGreenViewController.xib; path = Classes/AboutANUGreenViewController.xib; sourceTree = "<group>"; };
+		57BF3FD215BFB0B400B763AB /* greenapp-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-80.png"; sourceTree = "<group>"; };
+		57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-40-highres.png"; sourceTree = "<group>"; };
+		57BF3FD615BFB2F900B763AB /* greenapp-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-60.png"; sourceTree = "<group>"; };
 		57EACC6413EA666C0044A60F /* AuditElectricityGroomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditElectricityGroomingViewController.h; sourceTree = "<group>"; };
 		57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditElectricityGroomingViewController.m; sourceTree = "<group>"; };
 		57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuditElectricityGroomingViewController.xib; path = /Users/victor/Developer/greenkey/Classes/AuditElectricityGroomingViewController.xib; sourceTree = "<absolute>"; };
@@ -349,6 +355,9 @@
 				57A84E8315B7C3120030180C /* elecplug-40.png */,
 				57A84E8415B7C3120030180C /* gas-40.png */,
 				57A84E8515B7C3120030180C /* greenapp-40.png */,
+				57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */,
+				57BF3FD215BFB0B400B763AB /* greenapp-80.png */,
+				57BF3FD615BFB2F900B763AB /* greenapp-60.png */,
 				57A84E8615B7C3120030180C /* Hair Straightener.1.png */,
 				57A84E8715B7C3120030180C /* Halogen Downlight.png */,
 				57A84E8815B7C3120030180C /* home-40.png */,
@@ -527,6 +536,9 @@
 				57A84EF715B7C33B0030180C /* LICENSE in Resources */,
 				57A84EFD15B7C33B0030180C /* README.md in Resources */,
 				5745396015B7E276001D34A5 /* light-80.png in Resources */,
+				57BF3FD315BFB0B400B763AB /* greenapp-80.png in Resources */,
+				57BF3FD515BFB25000B763AB /* greenapp-40-highres.png in Resources */,
+				57BF3FD715BFB2F900B763AB /* greenapp-60.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
