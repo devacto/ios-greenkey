@@ -90,9 +90,9 @@
         
         UIImage *images[4];
         images[0] = [UIImage imageNamed:@"light-80.png"];
-        images[1] = [UIImage imageNamed:@"elecplug-40.png"];
-        images[2] = [UIImage imageNamed:@"gas-40.png"];
-        images[3] = [UIImage imageNamed:@"water-40.png"];
+        images[1] = [UIImage imageNamed:@"elecplug-80.png"];
+        images[2] = [UIImage imageNamed:@"gas-80.png"];
+        images[3] = [UIImage imageNamed:@"water-80.png"];
         
         scorecardImages = [[NSArray arrayWithObjects:images count:4] retain];
         
@@ -125,7 +125,7 @@
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	self.title = @"GreenKey";
+	self.title = @"Green Calculator";
 	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -190,8 +190,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    UIImage *residenceImage = [UIImage imageNamed:@"home-40.png"];
-    UIImage *calculateImage = [UIImage imageNamed:@"clipboard-40.png"];
+    UIImage *residenceImage = [UIImage imageNamed:@"home-80.png"];
+    UIImage *calculateImage = [UIImage imageNamed:@"clipboard-80.png"];
     
     // Configure the cell...
 

@@ -96,6 +96,12 @@
 		57BF3FD315BFB0B400B763AB /* greenapp-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD215BFB0B400B763AB /* greenapp-80.png */; };
 		57BF3FD515BFB25000B763AB /* greenapp-40-highres.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */; };
 		57BF3FD715BFB2F900B763AB /* greenapp-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD615BFB2F900B763AB /* greenapp-60.png */; };
+		57BF3FD915BFB50500B763AB /* elecplug-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD815BFB50500B763AB /* elecplug-80.png */; };
+		57BF3FDB15BFB50F00B763AB /* gas-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FDA15BFB50F00B763AB /* gas-80.png */; };
+		57BF3FDD15BFB51B00B763AB /* water-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FDC15BFB51B00B763AB /* water-80.png */; };
+		57BF3FDF15BFB53500B763AB /* home-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FDE15BFB53500B763AB /* home-80.png */; };
+		57BF3FE115BFB54300B763AB /* clipboard-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FE015BFB54300B763AB /* clipboard-80.png */; };
+		57BF3FE315C0D1DB00B763AB /* ANUgreen logo 2011.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FE215C0D1DB00B763AB /* ANUgreen logo 2011.jpeg */; };
 		57EACC6713EA666C0044A60F /* AuditElectricityGroomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */; };
 		57EACC6813EA666C0044A60F /* AuditElectricityGroomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */; };
 /* End PBXBuildFile section */
@@ -213,6 +219,12 @@
 		57BF3FD215BFB0B400B763AB /* greenapp-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-80.png"; sourceTree = "<group>"; };
 		57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-40-highres.png"; sourceTree = "<group>"; };
 		57BF3FD615BFB2F900B763AB /* greenapp-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-60.png"; sourceTree = "<group>"; };
+		57BF3FD815BFB50500B763AB /* elecplug-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "elecplug-80.png"; sourceTree = "<group>"; };
+		57BF3FDA15BFB50F00B763AB /* gas-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gas-80.png"; sourceTree = "<group>"; };
+		57BF3FDC15BFB51B00B763AB /* water-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water-80.png"; sourceTree = "<group>"; };
+		57BF3FDE15BFB53500B763AB /* home-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-80.png"; sourceTree = "<group>"; };
+		57BF3FE015BFB54300B763AB /* clipboard-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipboard-80.png"; sourceTree = "<group>"; };
+		57BF3FE215C0D1DB00B763AB /* ANUgreen logo 2011.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ANUgreen logo 2011.jpeg"; sourceTree = "<group>"; };
 		57EACC6413EA666C0044A60F /* AuditElectricityGroomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditElectricityGroomingViewController.h; sourceTree = "<group>"; };
 		57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditElectricityGroomingViewController.m; sourceTree = "<group>"; };
 		57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuditElectricityGroomingViewController.xib; path = /Users/victor/Developer/greenkey/Classes/AuditElectricityGroomingViewController.xib; sourceTree = "<absolute>"; };
@@ -338,6 +350,7 @@
 		57448AD113EA336700B24345 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				57BF3FE215C0D1DB00B763AB /* ANUgreen logo 2011.jpeg */,
 				57A84E7515B7C3120030180C /* 725_ANUgreen_logo_small.jpg */,
 				57A84E7615B7C3120030180C /* anu_web_l.png */,
 				57A84E7715B7C3120030180C /* app-icon-greencalc.png */,
@@ -346,6 +359,7 @@
 				57A84E7A15B7C3120030180C /* Blowdryer.1.png */,
 				57A84E7B15B7C3120030180C /* Circular fluorescent lamp.1.png */,
 				57A84E7C15B7C3120030180C /* clipboard-40.png */,
+				57BF3FE015BFB54300B763AB /* clipboard-80.png */,
 				57A84E7D15B7C3120030180C /* Coffee Maker.png */,
 				57A84E7E15B7C3120030180C /* Compact Fluorescent downlight.1.png */,
 				57A84E7F15B7C3120030180C /* Compact Fluorescent lamp.png */,
@@ -353,7 +367,9 @@
 				57A84E8115B7C3120030180C /* Desktop.1.png */,
 				57A84E8215B7C3120030180C /* DVD.1.png */,
 				57A84E8315B7C3120030180C /* elecplug-40.png */,
+				57BF3FD815BFB50500B763AB /* elecplug-80.png */,
 				57A84E8415B7C3120030180C /* gas-40.png */,
+				57BF3FDA15BFB50F00B763AB /* gas-80.png */,
 				57A84E8515B7C3120030180C /* greenapp-40.png */,
 				57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */,
 				57BF3FD215BFB0B400B763AB /* greenapp-80.png */,
@@ -361,6 +377,7 @@
 				57A84E8615B7C3120030180C /* Hair Straightener.1.png */,
 				57A84E8715B7C3120030180C /* Halogen Downlight.png */,
 				57A84E8815B7C3120030180C /* home-40.png */,
+				57BF3FDE15BFB53500B763AB /* home-80.png */,
 				57A84E8915B7C3120030180C /* incandescent bulb.1.png */,
 				57A84E8A15B7C3120030180C /* iPod (use for iPod Charger).1.png */,
 				57A84E8B15B7C3120030180C /* Kettle.1.png */,
@@ -385,6 +402,7 @@
 				57A84E9D15B7C3120030180C /* toilet.1.png */,
 				57A84E9E15B7C3120030180C /* washing machine.1.png */,
 				57A84E9F15B7C3120030180C /* water-40.png */,
+				57BF3FDC15BFB51B00B763AB /* water-80.png */,
 				57A84EA015B7C3120030180C /* XBox.png */,
 			);
 			name = Images;
@@ -539,6 +557,12 @@
 				57BF3FD315BFB0B400B763AB /* greenapp-80.png in Resources */,
 				57BF3FD515BFB25000B763AB /* greenapp-40-highres.png in Resources */,
 				57BF3FD715BFB2F900B763AB /* greenapp-60.png in Resources */,
+				57BF3FD915BFB50500B763AB /* elecplug-80.png in Resources */,
+				57BF3FDB15BFB50F00B763AB /* gas-80.png in Resources */,
+				57BF3FDD15BFB51B00B763AB /* water-80.png in Resources */,
+				57BF3FDF15BFB53500B763AB /* home-80.png in Resources */,
+				57BF3FE115BFB54300B763AB /* clipboard-80.png in Resources */,
+				57BF3FE315C0D1DB00B763AB /* ANUgreen logo 2011.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
