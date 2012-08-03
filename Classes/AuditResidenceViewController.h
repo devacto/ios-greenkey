@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class AbstractActionSheetPicker;
-@interface AuditResidenceViewController :  UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface AuditResidenceViewController :  UIViewController <UITextFieldDelegate> {
     
     @private
 		IBOutlet UITextField *residenceField;
@@ -20,9 +20,19 @@
 // Array containing the residence list of the ANU
 @property (nonatomic, strong) NSArray *buildingList;
 
+@property (nonatomic, strong) NSArray *bruceHallWings;
+@property (nonatomic, strong) NSArray *burgmannCollegeWings;
+@property (nonatomic, strong) NSArray *johnXXIIICollegeWings;
+@property (nonatomic, strong) NSArray *ursulaHallWings;
+@property (nonatomic, strong) NSArray *fennerHallWings;
+@property (nonatomic, strong) NSArray *burtonGarranHallWings;
+
+
 @property (retain) IBOutlet	UITextField *residenceField;
 @property (retain) IBOutlet	UITextField *wingField;
 
 - (IBAction)selectAResidence:(id)sender;
+
+- (IBAction)selectAWing:(id)sender;
 
 @end

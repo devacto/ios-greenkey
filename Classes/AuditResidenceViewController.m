@@ -17,6 +17,13 @@
 
 @synthesize buildingList;
 
+@synthesize bruceHallWings;
+@synthesize burgmannCollegeWings;
+@synthesize johnXXIIICollegeWings;
+@synthesize ursulaHallWings;
+@synthesize fennerHallWings;
+@synthesize burtonGarranHallWings;
+
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return NO;
@@ -26,24 +33,6 @@
 // These methods are for the data source of the picker view object
 // Components are the number of columns of the picker view
 // These methods are necessary for the 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return [buildingList count];
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    
-    return [buildingList objectAtIndex:row];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-}
 
 - (IBAction)selectAResidence:(UIControl *)sender {
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
@@ -56,6 +45,43 @@
     };
     [ActionSheetStringPicker showPickerWithTitle:@"Select a Residence" rows:buildingList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
     
+}
+
+- (IBAction)selectAWing:(UIControl *)sender {
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    if ([residenceField.text isEqualToString:@"Bruce Hall"]) {
+        bruceHallWings = [[NSArray alloc]
+                          initWithObjects:@"Bruce Hall Wing 1", @"Bruce Hall Wing 2", nil];
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a Building Wing" rows:bruceHallWings initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    } else if ([residenceField.text isEqualToString:@"Burgmann College"]) {
+        burgmannCollegeWings = [[NSArray alloc]
+                                initWithObjects:@"Burgmann Wing 1", @"Burgmann Wing 2", nil];
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a Building Wing" rows:burgmannCollegeWings initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];    
+    } else if ([residenceField.text isEqualToString:@"John XXIII College"]) {
+        johnXXIIICollegeWings = [[NSArray alloc]
+                                 initWithObjects:@"John XXIII Wing 1", @"John XXIII Wing 2", nil];
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a Building Wing" rows:johnXXIIICollegeWings initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    } else if ([residenceField.text isEqualToString:@"Ursula Hall"]) {
+        ursulaHallWings = [[NSArray alloc]
+                           initWithObjects:@"Ursula Wing 1", @"Ursula Wing 2", nil];
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a Building Wing" rows:ursulaHallWings initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    } else if ([residenceField.text isEqualToString:@"Fenner Hall"]) {
+        fennerHallWings = [[NSArray alloc]
+                           initWithObjects:@"Fenner Wing 1", @"Fenner Wing 2", nil];
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a Building Wing" rows:fennerHallWings initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    } else if ([residenceField.text isEqualToString:@"Burton & Garran Hall"]) {
+        burtonGarranHallWings = [[NSArray alloc]
+                                 initWithObjects:@"B&G Wing 1", @"B&G Wing 2", nil];
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a Building Wing" rows:burtonGarranHallWings initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];        
+    }
+
 }
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -81,6 +107,8 @@
     
     buildingList = [[NSArray alloc]
                     initWithObjects:@"Bruce Hall", @"Burgmann College", @"John XXIII College", @"Ursula Hall", @"Fenner Hall", @"Burton & Garran Hall", @"Davey Lodge", @"Kinloch Lodge", @"Warrumbul Lodge", @"Lena Karmel Lodge", nil];
+    
+    
 }
 
 

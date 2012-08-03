@@ -191,10 +191,13 @@
     }
     
     UIImage *residenceImage = [UIImage imageNamed:@"home-80.png"];
-    UIImage *calculateImage = [UIImage imageNamed:@"clipboard-80.png"];
+    // UIImage *calculateImage = [UIImage imageNamed:@"clipboard-80.png"];
+    
     
     // Configure the cell...
 
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
 	if (indexPath.section == 0) {
 		cell.textLabel.text = [self.menuResidence objectAtIndex:indexPath.row];
         cell.imageView.image = residenceImage;
@@ -203,10 +206,15 @@
         cell.imageView.image = [self.scorecardImages objectAtIndex:indexPath.row];
 	} else {
 		cell.textLabel.text = [self.menuResult	objectAtIndex:indexPath.row];
-        cell.imageView.image = calculateImage;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.backgroundColor = [[UIColor alloc] initWithRed:0.0 green:148/255.f blue:68/255.f alpha:1];
+        
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.textColor = [UIColor whiteColor];
+        
 	};
 	
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
 
 	
     return cell;

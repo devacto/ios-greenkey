@@ -46,4 +46,8 @@
 
 @property (retain) IBOutlet UISegmentedControl *turnOff;
 
+// properties for the different kinds of scroll pickers
+@property (nonatomic, strong) NSArray *numberOfBulbList;
+@property (nonatomic, strong) NSArray *durationList;
+
 @end

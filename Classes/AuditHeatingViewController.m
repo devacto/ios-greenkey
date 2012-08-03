@@ -11,7 +11,7 @@
 
 @implementation AuditHeatingViewController
 
-@synthesize valveField, thermostatField, heatingTable, myScroll;
+@synthesize valveField, thermostatField, heatingTable, myScroll, heatingModes, currentHeatingSelection;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
@@ -82,17 +82,20 @@
     self.valveField.delegate = self;
     self.thermostatField.delegate = self;
     
-    self.valveField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.thermostatField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    
     self.heatingTable.delegate = self;
     self.heatingTable.dataSource = self;
     
     //Setting the content size of the scroll view
 	self.myScroll.delegate = self;
     self.myScroll.contentSize=CGSizeMake(320,500);
+    
+    [self registerForKeyboardNotifications];
 	
+    heatingModes = [[NSArray alloc]
+                    initWithObjects:@"Valve on the radiator", @"Thermostat", @"I have no controls", nil];
+    
 	self.title = @"Heating";
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -104,45 +107,44 @@
 // Call this method somewhere in your view controller setup code.
 
 - (void)registerForKeyboardNotifications
-
 {
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-     
-                                             selector:@selector(keyboardWasShown:)
-     
+                                             selector:@selector(keyboardDidShow:)
                                                  name:UIKeyboardDidShowNotification object:nil];
-    
-    
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
-     
                                              selector:@selector(keyboardWillBeHidden:)
-     
                                                  name:UIKeyboardWillHideNotification object:nil];
-    
-    
-    
 }
 
 
 
 // Called when the UIKeyboardDidShowNotification is sent.
 
-- (void)keyboardWasShown:(NSNotification*)aNotification
+- (void)keyboardDidShow:(NSNotification*)aNotification
 
 {
     
     NSDictionary* info = [aNotification userInfo];
-    
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
     
+    self.view.center = CGPointMake(self.view.center.x, self.view.center.y - kbSize.height);
+    [UIView commitAnimations];
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    /* 
+     
+     commented out for the time being (not working yet)
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, kbSize.height, 0.0, 0.0);
     
     self.myScroll.contentInset = contentInsets;
     self.myScroll.scrollIndicatorInsets = contentInsets;
+     
+    */
     
 }
 
@@ -157,7 +159,6 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     
     self.myScroll.contentInset = contentInsets;
-    
     self.myScroll.scrollIndicatorInsets = contentInsets;
     
 }
@@ -206,10 +207,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+    
+    /*
+    The code below will create an exclusive checklist from the heating modes.
+    */
+        
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSInteger catIndex = [heatingModes indexOfObject:self.currentHeatingSelection];
+    
+    if (catIndex == indexPath.row) {
+        return;
+    }
+    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:catIndex inSection:0];
+    
+    
+    UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
+    if (newCell.accessoryType == UITableViewCellAccessoryNone) {
+        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        self.currentHeatingSelection = [heatingModes objectAtIndex: indexPath.row];
+    }
+        
+    UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldIndexPath];
+    if (oldCell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        oldCell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    /*
+     
+     Here are the old codes
+     
 	if (indexPath.row == 0) {
+        // When the 
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.valveField becomeFirstResponder];
+        
 	} else if (indexPath.row == 1) {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -218,6 +250,8 @@
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+     
+    */ 
 }
 
 

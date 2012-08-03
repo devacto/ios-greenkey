@@ -31,5 +31,7 @@
 @property (retain) IBOutlet UISegmentedControl *shutdownField;
 @property (retain) IBOutlet UISegmentedControl *turnoffField;
 
+@property (nonatomic, strong) *hoursList;
+
 
 @end

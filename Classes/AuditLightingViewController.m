@@ -7,11 +7,14 @@
 //
 
 #import "AuditLightingViewController.h"
+#import "ActionSheetPicker.h"
 
 
 @implementation AuditLightingViewController
 
 @synthesize compactFluorescentField, linearFluorescentField, circularFluorescentField, compactDownlightField, halogenDownlightField, incandescentBulbField, noCompactFluorescentField, noLinearFluorescentField, noCircularFluorescentField, noCompactDownlightField, noHalogenDownlightField, noIncandescentBulbField, turnOff;
+
+@synthesize numberOfBulbList, durationList;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     

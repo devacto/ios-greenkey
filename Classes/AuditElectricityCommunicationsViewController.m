@@ -12,6 +12,7 @@
 @implementation AuditElectricityCommunicationsViewController
 
 @synthesize laptopField, desktopField, printerField, scannerField, mobileField, ipodField, shutdownField, turnoffField;
+@synthesize hoursList;
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
