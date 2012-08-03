@@ -25,11 +25,6 @@
 @synthesize burtonGarranHallWings;
 
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    return NO;
-}
-
-
 // These methods are for the data source of the picker view object
 // Components are the number of columns of the picker view
 // These methods are necessary for the 

@@ -28,5 +28,6 @@
 @property (retain) IBOutlet UITextField *speakerField;
 @property (retain) IBOutlet UITextField *consoleField;
 
+@property (nonatomic, strong) NSArray *hoursList;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AuditElectricityCommunicationsViewController.h"
+#import "ActionSheetPicker.h"
 
 
 @implementation AuditElectricityCommunicationsViewController
@@ -15,10 +16,22 @@
 @synthesize hoursList;
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-	[textField resignFirstResponder];
-	return YES;	
+// The method below is included in order to get the scroll picker up for the text fields
+
+- (IBAction)selectHours:(UIControl *)sender {
+    hoursList = [[NSArray alloc]
+                 initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9",
+                 @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20",
+                 @"21", @"22", @"23", @"24", nil];
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Hours" rows:hoursList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];    
 }
 
 -(void)saveToUserDefaults:(NSNumber*)myResult forKey:(NSString*)myKey {

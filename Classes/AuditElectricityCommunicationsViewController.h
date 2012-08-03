@@ -31,7 +31,9 @@
 @property (retain) IBOutlet UISegmentedControl *shutdownField;
 @property (retain) IBOutlet UISegmentedControl *turnoffField;
 
-@property (nonatomic, strong) *hoursList;
+@property (nonatomic, strong) NSArray *hoursList;
+
+- (IBAction)selectHours:(id)sender;
 
 
 @end
