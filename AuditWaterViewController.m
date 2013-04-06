@@ -7,37 +7,113 @@
 //
 
 #import "AuditWaterViewController.h"
+#import "ActionSheetPicker.h"
 
 
 @implementation AuditWaterViewController
 
 @synthesize showerField, tapField, halfflushField, fullflushField, washField, coldwashField, fullwashField;
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-	[textField resignFirstResponder];
-	return YES;	
+@synthesize minutesList, numbersList;
+@synthesize delegate;
+
+#pragma mark - Picker view events
+
+- (IBAction)selectMinutes:(UIControl *)sender {
+    minutesList = [[NSArray alloc]
+                   initWithObjects: @"0", @"10", @"20", @"30", @"40", @"50", @"60", @"70", @"80", @"90", @"100", @"110", @"120", @"130", @"140", @"150", @"160", @"170", @"180",                    @"190", @"200", @"210", @"220", @"230", @"240", @"250", @"260", @"270", @"280", @"290", @"300", nil];
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Minutes" rows:minutesList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+- (IBAction)selectNumbers:(UIControl *)sender {
+    numbersList = [[NSArray alloc]
+                   initWithObjects: @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Numbers" rows:numbersList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
-*/
 
--(void)saveToUserDefaults:(NSNumber*)myResult forKey:(NSString*)myKey {
-    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+#pragma mark - Textfield delegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return NO;
+}
+
+#pragma mark - Save to user defaults
+
+- (void)saveStringToUserDefaults:(NSString *)myResult forKey:(NSString *)myKey {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     
     if (standardUserDefaults) {
         [standardUserDefaults setObject:myResult forKey:myKey];
         [standardUserDefaults synchronize];
     }
 }
+
+- (void)saveNumberToUserDefaults:(NSNumber *)myResult forKey:(NSString *)myKey {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (standardUserDefaults) {
+        [standardUserDefaults setObject:myResult forKey:myKey];
+        [standardUserDefaults synchronize];
+    }
+}
+
+#pragma mark - Load from user defaults
+
+- (NSString *)retrieveStringFromUserDefaultsForKey:(NSString *)key {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * value = @" ";
+    
+    if (standardUserDefaults) {
+        if ([standardUserDefaults objectForKey:key] != nil) {
+            value = [standardUserDefaults objectForKey:key];
+        }
+    }
+    
+    return value;
+}
+
+#pragma mark - Saving and loading inputs
+
+- (void)saveInputs {
+    [self saveStringToUserDefaults:self.showerField.text forKey:@"showerField"];
+    [self saveStringToUserDefaults:self.tapField.text forKey:@"tapField"];
+    [self saveStringToUserDefaults:self.halfflushField.text forKey:@"halfflushField"];
+    [self saveStringToUserDefaults:self.fullflushField.text forKey:@"fullflushField"];
+    [self saveStringToUserDefaults:self.washField.text forKey:@"washField"];
+    
+    [self saveStringToUserDefaults:[NSString stringWithFormat:@"%d", self.coldwashField.selectedSegmentIndex] forKey:@"coldwashField"];
+    [self saveStringToUserDefaults:[NSString stringWithFormat:@"%d", self.fullwashField.selectedSegmentIndex] forKey:@"fullwashField"];
+}
+
+- (void)loadInputs {
+    self.showerField.text = [self retrieveStringFromUserDefaultsForKey:@"showerField"];
+    self.tapField.text = [self retrieveStringFromUserDefaultsForKey:@"tapField"];
+    self.halfflushField.text = [self retrieveStringFromUserDefaultsForKey:@"halfflushField"];
+    self.fullflushField.text = [self retrieveStringFromUserDefaultsForKey:@"fullflushField"];
+    self.washField.text = [self retrieveStringFromUserDefaultsForKey:@"washField"];
+    
+    self.coldwashField.selectedSegmentIndex = [[self retrieveStringFromUserDefaultsForKey:@"coldwashField"] integerValue];
+    self.fullwashField.selectedSegmentIndex = [[self retrieveStringFromUserDefaultsForKey:@"fullwashField"] integerValue];
+}
+
+
+#pragma mark - Score calculation
 
 - (void)calculateScore {
     
@@ -72,51 +148,43 @@
     double waterSubtotal;
     waterSubtotal = ((showerValue + tapValue + halfflushValue + fullflushValue) * 30) + (washValue * 4) + fullwashValue + coldwashValue;
     
-    
-    NSLog(@"Water Subtotal = %g", waterSubtotal);
-    
-    [self saveToUserDefaults:[NSNumber numberWithDouble:waterSubtotal] forKey:@"water"];
+    [self saveNumberToUserDefaults:[NSNumber numberWithDouble:waterSubtotal] forKey:@"water"];
 }
 
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+#pragma mark - Done button event
+
+- (void)doneButtonClicked {
+    [self.delegate auditWaterViewControllerDidDone:self];
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.showerField.delegate = self;
-    self.tapField.delegate = self;
-    self.halfflushField.delegate = self;
-    self.fullflushField.delegate = self;
-    self.washField.delegate = self;
-    
-    self.showerField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.tapField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.halfflushField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.fullflushField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.washField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-	
     //Setting the content size of the scroll view
     UIScrollView *tempScrollView=(UIScrollView *)self.view;
 	tempScrollView.contentSize=CGSizeMake(320,540);
     
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonClicked)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
 	self.title = @"Water";
+    [doneButton autorelease];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadInputs];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
     [super viewWillDisappear:animated];
-    
     [self calculateScore];
+    [self saveInputs];
 }
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -127,8 +195,6 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     
     self.showerField = nil;
     self.tapField = nil;

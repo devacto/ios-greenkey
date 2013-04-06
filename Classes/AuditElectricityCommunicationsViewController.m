@@ -14,13 +14,14 @@
 
 @synthesize laptopField, desktopField, printerField, scannerField, mobileField, ipodField, shutdownField, turnoffField;
 @synthesize hoursList;
+@synthesize delegate;
 
 
-// The method below is included in order to get the scroll picker up for the text fields
+#pragma mark - Scroll picker events
 
 - (IBAction)selectHours:(UIControl *)sender {
     hoursList = [[NSArray alloc]
-                 initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9",
+                 initWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9",
                  @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20",
                  @"21", @"22", @"23", @"24", nil];
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
@@ -34,8 +35,10 @@
     [ActionSheetStringPicker showPickerWithTitle:@"Select Hours" rows:hoursList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];    
 }
 
--(void)saveToUserDefaults:(NSNumber*)myResult forKey:(NSString*)myKey {
-    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+#pragma mark - Save to user defaults
+
+- (void)saveStringToUserDefaults:(NSString *)myResult forKey:(NSString *)myKey {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     
     if (standardUserDefaults) {
         [standardUserDefaults setObject:myResult forKey:myKey];
@@ -43,9 +46,63 @@
     }
 }
 
-- (void)calculateScore {
+- (void)saveNumberToUserDefaults:(NSNumber *)myResult forKey:(NSString *)myKey {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     
-    //Setting up the variables
+    if (standardUserDefaults) {
+        [standardUserDefaults setObject:myResult forKey:myKey];
+        [standardUserDefaults synchronize];
+    }
+}
+
+#pragma mark - Load from user defaults
+
+- (NSString *)retrieveStringFromUserDefaultsForKey:(NSString *)key {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * value = @" ";
+    
+    if (standardUserDefaults) {
+        if ([standardUserDefaults objectForKey:key] != nil) {
+            value = [standardUserDefaults objectForKey:key];
+        }
+    }
+    
+    return value;
+}
+
+#pragma mark - Saving and loading inputs
+
+- (void)saveInputs {
+    [self saveStringToUserDefaults:self.laptopField.text forKey:@"laptopField"];
+    [self saveStringToUserDefaults:self.desktopField.text forKey:@"desktopField"];
+    [self saveStringToUserDefaults:self.printerField.text forKey:@"printerField"];
+    [self saveStringToUserDefaults:self.scannerField.text forKey:@"scannerField"];
+    [self saveStringToUserDefaults:self.mobileField.text forKey:@"mobileField"];
+    [self saveStringToUserDefaults:self.ipodField.text forKey:@"ipodField"];
+    [self saveStringToUserDefaults:[NSString stringWithFormat:@"%d", self.shutdownField.selectedSegmentIndex] forKey:@"shutdownField"];
+    [self saveStringToUserDefaults:[NSString stringWithFormat:@"%d", self.turnoffField.selectedSegmentIndex] forKey:@"turnoffField"];
+}
+
+- (void)loadInputs {
+    self.laptopField.text  = [self retrieveStringFromUserDefaultsForKey:@"laptopField"];
+    self.desktopField.text = [self retrieveStringFromUserDefaultsForKey:@"desktopField"];
+    self.printerField.text = [self retrieveStringFromUserDefaultsForKey:@"printerField"];
+    self.scannerField.text = [self retrieveStringFromUserDefaultsForKey:@"scannerField"];
+    self.mobileField.text  = [self retrieveStringFromUserDefaultsForKey:@"mobileField"];
+    self.ipodField.text    = [self retrieveStringFromUserDefaultsForKey:@"ipodField"];
+    self.shutdownField.selectedSegmentIndex = [[self retrieveStringFromUserDefaultsForKey:@"shutdownField"] integerValue];
+    self.turnoffField.selectedSegmentIndex  = [[self retrieveStringFromUserDefaultsForKey:@"turnoffField"] integerValue];
+}
+
+#pragma mark - Textfield delegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return NO;
+}
+
+#pragma mark - Calculate score
+
+- (void)calculateScore {
     double laptopValue;
     double desktopValue;
     double printerValue;
@@ -63,74 +120,48 @@
     double communicationSubtotal;
     communicationSubtotal = (laptopValue + desktopValue + printerValue + scannerValue + mobileValue + ipodValue) * 30 / 1000;
     
-    NSLog(@"Communication Subtotal = %g", communicationSubtotal);
-    
-    [self saveToUserDefaults:[NSNumber numberWithDouble:communicationSubtotal] forKey:@"communication"];
+    [self saveNumberToUserDefaults:[NSNumber numberWithDouble:communicationSubtotal] forKey:@"communication"];
 }
 
+#pragma mark - Done button event
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+- (void)doneButtonClicked {
+    [self.delegate auditElectricityCommunicationsViewControllerDidDone:self];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
-*/
 
+#pragma mark - View lifecycle
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.laptopField.delegate = self;
-    self.desktopField.delegate = self;
-    self.printerField.delegate = self;
-    self.scannerField.delegate = self;
-    self.mobileField.delegate = self;
-    self.ipodField.delegate = self;
-	
-    self.laptopField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.desktopField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.printerField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.scannerField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.mobileField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    self.ipodField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    
     UIScrollView *tempScrollView=(UIScrollView *)self.view;
-	tempScrollView.contentSize=CGSizeMake(320,650);
+	tempScrollView.contentSize=CGSizeMake(320,680);
     
 	self.title = @"Communications";
+    
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonClicked)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    [doneButton autorelease];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
     [super viewWillDisappear:animated];
-    
     [self calculateScore];
+    [self saveInputs];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadInputs];
 }
-*/
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     
     self.laptopField = nil;
     self.desktopField = nil;

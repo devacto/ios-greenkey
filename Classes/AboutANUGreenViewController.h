@@ -10,7 +10,9 @@
 
 
 @interface AboutANUGreenViewController : UIViewController {
-
+    
 }
+
+- (IBAction)visitWebsite:(UIButton *)sender;
 
 @end

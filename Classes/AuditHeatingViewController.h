@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AuditHeatingViewController;
+
+@protocol AuditHeatingViewControllerDelegate
+- (void)auditHeatingViewControllerDidDone: (AuditHeatingViewController *)controller;
+@end
 
 
 @interface AuditHeatingViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate> {
@@ -19,8 +24,7 @@
   
 }
 
-
--(void) registerForKeyboardNotifications;
+@property (nonatomic, strong) id <AuditHeatingViewControllerDelegate> delegate;
 
 @property (retain) IBOutlet UITextField *valveField;
 @property (retain) IBOutlet UITextField *thermostatField;
@@ -29,5 +33,15 @@
 
 @property (assign) NSString *currentHeatingSelection;
 @property (retain) NSArray *heatingModes;
+
+@property (nonatomic, strong) NSArray *valveList;
+@property (nonatomic, strong) NSArray *thermostatList;
+
+@property (nonatomic) BOOL valveSelected;
+@property (nonatomic) BOOL thermostatSelected;
+@property (nonatomic) BOOL noControSelected;
+
+- (IBAction)selectValveSettings:(id)sender;
+- (IBAction)selectThermostatSettings:(id)sender;
 
 @end

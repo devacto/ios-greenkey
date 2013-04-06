@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AuditElectricityKitchenViewController;
+
+@protocol AuditElectricityKitchenViewControllerDelegate
+- (void)auditElectricityKitchenViewControllerDidDone: (AuditElectricityKitchenViewController *)controller;
+@end
 
 
 @interface AuditElectricityKitchenViewController : UIViewController <UITextFieldDelegate> {
@@ -18,9 +23,16 @@
     IBOutlet UITextField *toasterField;
 }
 
+@property (nonatomic, strong) id <AuditElectricityKitchenViewControllerDelegate> delegate;
+
 @property (retain) IBOutlet UITextField *kettleField;
 @property (retain) IBOutlet UITextField *microwaveField;
 @property (retain) IBOutlet UITextField *coffeemachineField;
 @property (retain) IBOutlet UITextField *toasterField;
+
+@property (nonatomic, strong) NSArray *minutesList;
+
+- (IBAction)selectMinutes:(id)sender;
+- (void)doneButtonClicked;
 
 @end

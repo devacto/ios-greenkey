@@ -7,17 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AuditResidenceViewController;
 
-@class AbstractActionSheetPicker;
+@protocol AuditResidenceViewControllerDelegate
+- (void)auditResidenceViewControllerDidDone:(AuditResidenceViewController *)controller;
+@end
+
 @interface AuditResidenceViewController :  UIViewController <UITextFieldDelegate> {
     
     @private
 		IBOutlet UITextField *residenceField;
 		IBOutlet UITextField *wingField;
+        IBOutlet UISegmentedControl *roomSharingField;
 	
-};
+}
 
-// Array containing the residence list of the ANU
+@property (nonatomic, strong) id <AuditResidenceViewControllerDelegate> delegate;
+
 @property (nonatomic, strong) NSArray *buildingList;
 
 @property (nonatomic, strong) NSArray *bruceHallWings;
@@ -27,12 +33,13 @@
 @property (nonatomic, strong) NSArray *fennerHallWings;
 @property (nonatomic, strong) NSArray *burtonGarranHallWings;
 
-
 @property (retain) IBOutlet	UITextField *residenceField;
 @property (retain) IBOutlet	UITextField *wingField;
+@property (retain) IBOutlet UISegmentedControl *roomSharingField;
 
 - (IBAction)selectAResidence:(id)sender;
-
 - (IBAction)selectAWing:(id)sender;
+
+- (void)doneButtonClicked;
 
 @end

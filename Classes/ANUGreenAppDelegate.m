@@ -27,7 +27,6 @@
 	[agvc release];
 	[window addSubview:navcon.view];
     [window makeKeyAndVisible];
-    
     return YES;
 }
 

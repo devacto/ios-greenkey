@@ -14,11 +14,20 @@
 
 @interface AuditElectricityTableViewController()
 @property (nonatomic, retain) NSArray *menu;
+
+// properties for the checkmark
+@property (nonatomic) BOOL kitchenDone;
+@property (nonatomic) BOOL communicationsDone;
+@property (nonatomic) BOOL entertainmentDone;
+@property (nonatomic) BOOL groomingDone;
+
 @end
 
 @implementation AuditElectricityTableViewController
 
 @synthesize menu;
+@synthesize delegate;
+@synthesize kitchenDone, communicationsDone, entertainmentDone, groomingDone;
 
 - (NSArray *) menu {
 	if (!menu) {
@@ -34,66 +43,95 @@
 	return menu;
 }
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Done button event
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+- (void)doneButtonClicked {
+    [self.delegate auditElectricityTableViewControllerDidDone:self];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
-*/
 
+#pragma mark - AuditElectricityKitchenViewControllerDelegate
 
-#pragma mark -
-#pragma mark View lifecycle
+- (void)auditElectricityKitchenViewControllerDidDone:(AuditElectricityKitchenViewController *)controller {
+    kitchenDone = YES;
+    [self.tableView reloadData];
+}
 
+#pragma mark - AuditElectricityEntertainmentViewControllerDelegate
+
+- (void)auditElectricityEntertainmentViewControllerDidDone:(AuditElectricityEntertainmentViewController *)controller {
+    entertainmentDone = YES;
+    [self.tableView reloadData];
+}
+
+#pragma mark - AuditElectricityCommunicationsViewControllerDelegate
+
+- (void)auditElectricityCommunicationsViewControllerDidDone:(AuditElectricityCommunicationsViewController *)controller {
+    communicationsDone = YES;
+    [self.tableView reloadData];
+}
+
+#pragma mark - AuditElectricityGroomingViewControllerDelegate
+
+- (void)auditElectricityGroomingViewControllerDidDone:(AuditElectricityGroomingViewController *)controller {
+    groomingDone = YES;
+    [self.tableView reloadData];
+}
+
+#pragma mark - Saving boolean to user defaults
+
+- (void)saveBOOLToUserDefaults:(BOOL)myResult forKey:(NSString *)myKey {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (standardUserDefaults) {
+        [standardUserDefaults setBool:myResult forKey:myKey];
+        [standardUserDefaults synchronize];
+    }
+}
+
+#pragma mark - Loading boolean from user defaults
+
+- (BOOL)retrieveBOOLFromUserDefaultsForKey:(NSString *)key {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL value = NO;
+    
+    if (standardUserDefaults) {
+        if ([standardUserDefaults objectForKey:key]) {
+            value = [standardUserDefaults boolForKey:key];
+        }
+    }
+    
+    return value;
+}
+
+#pragma mark - Saving and loading inputs
+
+- (void)saveInputs {
+    
+}
+
+- (void)loadInputs {
+    
+}
+
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialiseAllDoneToFalse];
 	
 	self.title = @"Electricity";
-	
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem * backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonClicked)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    [doneButton autorelease];
+    [backButton autorelease];
 }
 
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-
-#pragma mark -
-#pragma mark Table view data source
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -107,7 +145,6 @@
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
@@ -121,97 +158,76 @@
     
 	cell.textLabel.text = [self.menu objectAtIndex:indexPath.row];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    // This is to mark the cell which are done with the checkmark
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            if (kitchenDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        } else if (indexPath.row == 1) {
+            if (communicationsDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        } else if (indexPath.row == 2) {
+            if (entertainmentDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        } else if (indexPath.row == 3) {
+            if (groomingDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
+    }
 	
     return cell;
 }
 
+#pragma mark - Initialising boolean variables
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)initialiseAllDoneToFalse {
+    self.kitchenDone = NO;
+    self.communicationsDone = NO;
+    self.entertainmentDone = NO;
+    self.groomingDone = NO;
 }
-*/
 
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-#pragma mark -
-#pragma mark Table view delegate
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    */
 	
 	if (indexPath.row == 0) {
 		AuditElectricityKitchenViewController *aekvc = [[AuditElectricityKitchenViewController alloc] init];
+        aekvc.delegate = self;
 		[self.navigationController pushViewController:aekvc animated:YES];
 		[aekvc release];
 	} else if (indexPath.row == 1) {
 		AuditElectricityCommunicationsViewController *aecvc = [[AuditElectricityCommunicationsViewController alloc] init];
+        aecvc.delegate = self;
 		[self.navigationController pushViewController:aecvc animated:YES];
 		[aecvc release];
 	} else if (indexPath.row == 2) {
 		AuditElectricityEntertainmentViewController *aeevc = [[AuditElectricityEntertainmentViewController alloc] init];
+        aeevc.delegate = self;
 		[self.navigationController pushViewController:aeevc animated:YES];
 		[aeevc release];
 	} else if (indexPath.row == 3) {
 		AuditElectricityGroomingViewController *aegvc = [[AuditElectricityGroomingViewController alloc] init];
+        aegvc.delegate = self;
 		[self.navigationController pushViewController:aegvc animated:YES];
 		[aegvc release];
 	}
 }
 
-
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+
 }
 
 

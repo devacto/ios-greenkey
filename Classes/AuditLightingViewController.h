@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AuditLightingViewController;
+
+@protocol AuditLightingViewControllerDelegate
+- (void)auditLightingViewControllerDidDone:(AuditLightingViewController *)controller;
+@end
 
 
 @interface AuditLightingViewController : UIViewController <UITextFieldDelegate> {
@@ -30,6 +35,8 @@
     IBOutlet UISegmentedControl *turnOff;
 }
 
+@property (nonatomic, strong) id <AuditLightingViewControllerDelegate> delegate;
+
 @property (retain) IBOutlet UITextField *compactFluorescentField;
 @property (retain) IBOutlet UITextField *linearFluorescentField;
 @property (retain) IBOutlet UITextField *circularFluorescentField;
@@ -49,5 +56,12 @@
 // properties for the different kinds of scroll pickers
 @property (nonatomic, strong) NSArray *numberOfBulbList;
 @property (nonatomic, strong) NSArray *durationList;
+
+- (IBAction)selectNumber:(id)sender;
+- (IBAction)selectDuration:(id)sender;
+
+- (void)doneButtonClicked;
+
+- (void)saveInputs;
 
 @end

@@ -18,7 +18,12 @@
 	AboutAppViewController *aavc = [[AboutAppViewController alloc] init];
 	
 	aavc.title = [NSString stringWithFormat:@"Credits"];
+    
+    UIBarButtonItem * backButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self.parentViewController action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
 	[self.navigationController pushViewController:aavc animated:YES];
+    [backButton release];
 	[aavc release];
 	
 }
@@ -27,8 +32,13 @@
 
 	AboutANUGreenViewController *aagvc = [[AboutANUGreenViewController alloc] init];
 	
-	aagvc.title = [NSString stringWithFormat:@"Initiatives"];
+	aagvc.title = [NSString stringWithFormat:@"ANUgreen"];
+    
+    UIBarButtonItem * backButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self.parentViewController action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
 	[self.navigationController pushViewController:aagvc animated:YES];
+    [backButton release];
 	[aagvc release];
 	
 }
@@ -40,9 +50,13 @@
     UIColor *uni25 = [[UIColor alloc] initWithRed:234/255.f green:239/255.f blue:241/255.f alpha:1];
 	
     ttvc.tableView.backgroundColor = uni25;
-    
 	ttvc.title = [NSString stringWithFormat:@"Energy Audit"];
+    
+    UIBarButtonItem * backButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self.parentViewController action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
 	[self.navigationController pushViewController:ttvc animated:YES];
+    [backButton release];
 	[ttvc release];
     [uni25 release];
 }

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AuditElectricityGroomingViewController.h"
 
-@interface TestTableViewController : UITableViewController {
+#import "AuditLightingViewController.h"
+#import "AuditResidenceViewController.h"
+#import "AuditElectricityTableViewController.h"
+#import "AuditHeatingViewController.h"
+#import "AuditWaterViewController.h"
 
-}
+@interface TestTableViewController : UITableViewController <AuditLightingViewControllerDelegate, AuditResidenceViewControllerDelegate, AuditElectricityTableViewControllerDelegate, AuditHeatingViewControllerDelegate, AuditWaterViewControllerDelegate>
 
 @end

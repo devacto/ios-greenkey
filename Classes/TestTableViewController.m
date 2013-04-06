@@ -22,11 +22,22 @@
 @property (nonatomic, retain) NSArray *menuScorecard;
 @property (nonatomic, retain) NSArray *menuResult;
 @property (nonatomic, retain) NSArray *scorecardImages;
+
+// properties for the checkmark on the different sections
+@property (nonatomic) BOOL residenceDone;
+@property (nonatomic) BOOL lightingDone;
+@property (nonatomic) BOOL electricityDone;
+@property (nonatomic) BOOL heatingDone;
+@property (nonatomic) BOOL waterDone;
+
 @end
 
 @implementation TestTableViewController
 
 @synthesize sections, menuResidence, menuScorecard, menuResult, scorecardImages;
+@synthesize residenceDone, lightingDone, electricityDone, heatingDone, waterDone;
+
+#pragma mark - Data initialisation to generate the menu
 
 - (NSArray *)sections
 {
@@ -38,8 +49,7 @@
 		aString[2] = @"Result";
 		
 		sections = [[NSArray arrayWithObjects:aString count:3] retain];
-		
-		// strings array contains { @"First", @"Second" }
+        
 	}
 	return sections;
 }
@@ -51,7 +61,6 @@
 		strings[0] = @"Residence";
 		
 		menuResidence = [[NSArray arrayWithObjects:strings count:1] retain];
-		// strings array contains { @"First", @"Second" }
 	}
 	return menuResidence;
 }
@@ -102,65 +111,81 @@
     
 }
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Saving to user defaults
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization.
+- (void)saveBOOLToUserDefaults:(BOOL)myResult forKey:(NSString *)myKey {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (standardUserDefaults) {
+        [standardUserDefaults setBool:myResult forKey:myKey];
+        [standardUserDefaults synchronize];
     }
-    return self;
 }
-*/
 
+#pragma mark - Loading from user defaults
 
-#pragma mark -
-#pragma mark View lifecycle
+- (BOOL)retrieveBOOLFromUserDefaultsForKey:(NSString *)key {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL value = NO;
+    
+    if (standardUserDefaults) {
+        if ([standardUserDefaults objectForKey:key]) {
+            value = [standardUserDefaults boolForKey:key];
+        } else {
+            value = NO;
+        }
+    }
+    
+    return value;
+}
 
+#pragma mark - Saving and loading inputs
+
+- (void)saveInputs {
+    [self saveBOOLToUserDefaults:residenceDone forKey:@"residenceDone"];
+    [self saveBOOLToUserDefaults:lightingDone forKey:@"lightingDone"];
+    [self saveBOOLToUserDefaults:electricityDone forKey:@"electricityDone"];
+    [self saveBOOLToUserDefaults:heatingDone forKey:@"heatingDone"];
+    [self saveBOOLToUserDefaults:waterDone forKey:@"waterDone"];
+}
+
+- (void)loadInputs {
+    self.residenceDone = [self retrieveBOOLFromUserDefaultsForKey:@"residenceDone"];
+    self.lightingDone  = [self retrieveBOOLFromUserDefaultsForKey:@"lightingDone"];
+    self.electricityDone = [self retrieveBOOLFromUserDefaultsForKey:@"electricityDone"];
+    self.heatingDone = [self retrieveBOOLFromUserDefaultsForKey:@"heatingDone"];
+    self.waterDone = [self retrieveBOOLFromUserDefaultsForKey:@"waterDone"];
+}
+
+#pragma mark - Initialising Boolean Variables
+
+- (void)initialiseAllDoneToFalse {
+    self.residenceDone = NO;
+    self.lightingDone = NO;
+    self.electricityDone = NO;
+    self.heatingDone = NO;
+    self.waterDone = NO;
+}
+
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem * backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    [backButton release];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	self.title = @"Green Calculator";
-	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
-/*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadInputs];
+    [[self tableView] reloadData];
 }
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
-
-#pragma mark -
-#pragma mark Table view data source
+#pragma mark - Table View Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -193,6 +218,8 @@
     UIImage *residenceImage = [UIImage imageNamed:@"home-80.png"];
     // UIImage *calculateImage = [UIImage imageNamed:@"clipboard-80.png"];
     
+    UIColor * colorWhite  = [[UIColor alloc] initWithWhite:1.0 alpha:1.0];
+    UIColor * colorVictor = [[UIColor alloc] initWithRed:0.0 green:148/255.f blue:68/255.f alpha:1];
     
     // Configure the cell...
 
@@ -201,22 +228,45 @@
 	if (indexPath.section == 0) {
 		cell.textLabel.text = [self.menuResidence objectAtIndex:indexPath.row];
         cell.imageView.image = residenceImage;
+        if (residenceDone == YES) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
 	} else if (indexPath.section == 1) {
 		cell.textLabel.text = [self.menuScorecard objectAtIndex:indexPath.row];
         cell.imageView.image = [self.scorecardImages objectAtIndex:indexPath.row];
+        
+        if (indexPath.row == 0) {
+            if (lightingDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        } else if (indexPath.row == 1) {
+            if (electricityDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        } else if (indexPath.row == 2) {
+            if (heatingDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        } else if (indexPath.row == 3) {
+            if (waterDone == YES) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
+        
+        
 	} else {
 		cell.textLabel.text = [self.menuResult	objectAtIndex:indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.backgroundColor = [[UIColor alloc] initWithRed:0.0 green:148/255.f blue:68/255.f alpha:1];
-        
+        cell.backgroundColor = colorVictor;
         cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.textLabel.textColor = [UIColor whiteColor];
+        
+        cell.textLabel.textColor = colorWhite;
         
 	};
 	
-	
-
-	
+    [colorWhite release];
+    [colorVictor release];
+    
     return cell;
 }
 
@@ -226,79 +276,77 @@
 
 }
 
+#pragma mark - AuditLightingViewControllerDelegate
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)auditLightingViewControllerDidDone:(AuditLightingViewController *)controller {
     
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
+    lightingDone = YES;
+    [self saveInputs];
+    [self.tableView reloadData];
 }
-*/
 
+#pragma mark - AuditResidenceViewControllerDelegate
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)auditResidenceViewControllerDidDone:(AuditResidenceViewController *)controller {
+    
+    residenceDone = YES;
+    [self saveInputs];
+    [self.tableView reloadData];
+    
 }
-*/
 
+#pragma mark - AuditElectricityTableViewControllerDelegate
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (void)auditElectricityTableViewControllerDidDone:(AuditElectricityTableViewController *)controller {
+    electricityDone = YES;
+    [self saveInputs];
+    [self.tableView reloadData];
 }
-*/
 
+#pragma mark - AuditHeatingViewControllerDelegate
 
-#pragma mark -
-#pragma mark Table view delegate
+- (void)auditHeatingViewControllerDidDone:(AuditHeatingViewController *)controller {
+    heatingDone = YES;
+    [self saveInputs];
+    [self.tableView reloadData];
+}
+
+#pragma mark - AuditWaterViewControllerDelegate
+
+- (void)auditWaterViewControllerDidDone:(AuditWaterViewController *)controller {
+    waterDone = YES;
+    [self saveInputs];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    */
 	
 	if (indexPath.section == 0) {
 		AuditResidenceViewController *arvc = [[AuditResidenceViewController alloc] init];
+        arvc.delegate = self;
 		[self.navigationController pushViewController:arvc animated:YES];
 		[arvc release];
 	} else if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
             AuditLightingViewController *alvc = [[AuditLightingViewController alloc] init];
+            alvc.delegate = self;
 			[self.navigationController pushViewController:alvc animated:YES];
 			[alvc release];
 		} else if (indexPath.row == 1) {
 			AuditElectricityTableViewController *aetvc = [[AuditElectricityTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+            aetvc.delegate = self;
 			[self.navigationController pushViewController:aetvc animated:YES];
 			[aetvc release];
 		} else if (indexPath.row == 2) {
 			AuditHeatingViewController *ahvc = [[AuditHeatingViewController alloc] init];
+            ahvc.delegate = self;
 			[self.navigationController pushViewController:ahvc animated:YES];
 			[ahvc release];
 		} else if (indexPath.row == 3) {
 			AuditWaterViewController *awvc = [[AuditWaterViewController alloc] init];
+            awvc.delegate = self;
 			[self.navigationController pushViewController:awvc animated:YES];
 			[awvc release];
 		}
@@ -309,20 +357,14 @@
 	}
 }
 
-
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+
 }
 
 

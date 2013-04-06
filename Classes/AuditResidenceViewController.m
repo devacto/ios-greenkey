@@ -14,6 +14,7 @@
 
 @synthesize residenceField;
 @synthesize wingField;
+@synthesize roomSharingField;
 
 @synthesize buildingList;
 
@@ -23,11 +24,13 @@
 @synthesize ursulaHallWings;
 @synthesize fennerHallWings;
 @synthesize burtonGarranHallWings;
+@synthesize delegate;
 
+
+#pragma mark - Textfield Actions
 
 // These methods are for the data source of the picker view object
 // Components are the number of columns of the picker view
-// These methods are necessary for the 
 
 - (IBAction)selectAResidence:(UIControl *)sender {
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
@@ -79,56 +82,99 @@
 
 }
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+#pragma mark - Done Button Event
+
+- (void)doneButtonClicked {
+    [self.delegate auditResidenceViewControllerDidDone:self];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
-*/
 
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+#pragma mark - Textfield Delegate
+
+- (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+    return NO;
+}
+
+#pragma mark - Save to user defaults
+
+- (void)saveStringToUserDefaults:(NSString *)input forKey:(NSString *)key {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (standardUserDefaults) {
+        [standardUserDefaults setObject:input forKey:key];
+        [standardUserDefaults synchronize];
+    }
+    
+}
+
+#pragma mark - Load from user defaults
+
+- (NSString *)retrieveStringFromUserDefaultsForKey:(NSString *)key {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * value = @" ";
+    
+    if (standardUserDefaults) {
+        if ([standardUserDefaults objectForKey:key] != nil) {
+            value = [standardUserDefaults objectForKey:key];
+        }
+    }
+    
+    return value;
+    
+}
+
+#pragma mark - Saving and loading inputs
+
+- (void)saveInputs {
+    [self saveStringToUserDefaults:self.residenceField.text forKey:@"residenceField"];
+    [self saveStringToUserDefaults:self.wingField.text forKey:@"wingField"];
+    [self saveStringToUserDefaults:[NSString stringWithFormat:@"%d", self.roomSharingField.selectedSegmentIndex] forKey:@"roomSharingField"];
+}
+
+
+- (void)loadInputs {
+    self.residenceField.text = [self retrieveStringFromUserDefaultsForKey:@"residenceField"];
+    self.wingField.text = [self retrieveStringFromUserDefaultsForKey:@"wingField"];
+    self.roomSharingField.selectedSegmentIndex = [[self retrieveStringFromUserDefaultsForKey:@"roomSharingField"] integerValue];
+}
+
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	self.residenceField.delegate = self;
-	self.wingField.delegate = self;
 
 	self.title = @"Residence";
     
     buildingList = [[NSArray alloc]
-                    initWithObjects:@"Bruce Hall", @"Burgmann College", @"John XXIII College", @"Ursula Hall", @"Fenner Hall", @"Burton & Garran Hall", @"Davey Lodge", @"Kinloch Lodge", @"Warrumbul Lodge", @"Lena Karmel Lodge", nil];
+                    initWithObjects:@"Bruce Hall", @"Burgmann College", @"John XXIII College", @"Ursula Hall", @"Fenner Hall", @"Burton & Garran Hall", @"Davey Lodge", @"Kinloch Lodge", @"Warrumbul Lodge", @"Lena Karmel Lodge", @"Off-campus", nil];
     
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonClicked)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    [doneButton release];
     
 }
 
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadInputs];
 }
-*/
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self saveInputs];
+}
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	
 	self.residenceField = nil;
 	self.wingField = nil;
+    self.roomSharingField = nil;
 	
 }
 
@@ -136,6 +182,7 @@
 - (void)dealloc {
 	[residenceField release];
 	[wingField release];
+    [roomSharingField release];
     [super dealloc];
 }
 

@@ -15,6 +15,9 @@
 		2899E5220DE3E06400AC0155 /* ANUGreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ANUGreenViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ANUGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ANUGreenViewController.m */; };
+		571CF9A11600526500B6C4AF /* AuditElectricityGroomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571CF9A01600526500B6C4AF /* AuditElectricityGroomingViewController.xib */; };
+		573C2F2515DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 573C2F2415DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg */; };
+		573C2F2715DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 573C2F2615DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg */; };
 		57448ACF13EA335200B24345 /* InitiativesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57448ACD13EA335200B24345 /* InitiativesViewController.m */; };
 		57448AD013EA335200B24345 /* InitiativesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57448ACE13EA335200B24345 /* InitiativesViewController.xib */; };
 		5745396015B7E276001D34A5 /* light-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 5745395F15B7E276001D34A5 /* light-80.png */; };
@@ -46,7 +49,6 @@
 		57A84EA915B7C3120030180C /* Coffee Maker.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E7D15B7C3120030180C /* Coffee Maker.png */; };
 		57A84EAA15B7C3120030180C /* Compact Fluorescent downlight.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E7E15B7C3120030180C /* Compact Fluorescent downlight.1.png */; };
 		57A84EAB15B7C3120030180C /* Compact Fluorescent lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E7F15B7C3120030180C /* Compact Fluorescent lamp.png */; };
-		57A84EAC15B7C3120030180C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E8015B7C3120030180C /* Default.png */; };
 		57A84EAD15B7C3120030180C /* Desktop.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E8115B7C3120030180C /* Desktop.1.png */; };
 		57A84EAE15B7C3120030180C /* DVD.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E8215B7C3120030180C /* DVD.1.png */; };
 		57A84EAF15B7C3120030180C /* elecplug-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A84E8315B7C3120030180C /* elecplug-40.png */; };
@@ -93,7 +95,6 @@
 		57AD062813E63E67007CAEEE /* AboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57AD062613E63E67007CAEEE /* AboutAppViewController.xib */; };
 		57AD06FC13E667B7007CAEEE /* AboutANUGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD06FA13E667B7007CAEEE /* AboutANUGreenViewController.m */; };
 		57AD06FD13E667B7007CAEEE /* AboutANUGreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57AD06FB13E667B7007CAEEE /* AboutANUGreenViewController.xib */; };
-		57BF3FD315BFB0B400B763AB /* greenapp-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD215BFB0B400B763AB /* greenapp-80.png */; };
 		57BF3FD515BFB25000B763AB /* greenapp-40-highres.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */; };
 		57BF3FD715BFB2F900B763AB /* greenapp-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD615BFB2F900B763AB /* greenapp-60.png */; };
 		57BF3FD915BFB50500B763AB /* elecplug-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FD815BFB50500B763AB /* elecplug-80.png */; };
@@ -102,8 +103,14 @@
 		57BF3FDF15BFB53500B763AB /* home-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FDE15BFB53500B763AB /* home-80.png */; };
 		57BF3FE115BFB54300B763AB /* clipboard-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FE015BFB54300B763AB /* clipboard-80.png */; };
 		57BF3FE315C0D1DB00B763AB /* ANUgreen logo 2011.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57BF3FE215C0D1DB00B763AB /* ANUgreen logo 2011.jpeg */; };
+		57C28471160C158400A6FF0F /* app-icon-greencalc-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C28470160C158400A6FF0F /* app-icon-greencalc-114.png */; };
+		57C28473160C159B00A6FF0F /* app-icon-greencalc-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C28472160C159B00A6FF0F /* app-icon-greencalc-57.png */; };
+		57C28475160C162500A6FF0F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C28474160C162500A6FF0F /* Default@2x.png */; };
+		57C28477160C169E00A6FF0F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C28476160C169E00A6FF0F /* Default.png */; };
+		57C4C0E516157ABF00C6AE6A /* greenapp-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C4C0E416157ABF00C6AE6A /* greenapp-60@2x.png */; };
+		57C4C0E916157BEF00C6AE6A /* app-splash-h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C4C0E816157BEF00C6AE6A /* app-splash-h@2x.png */; };
 		57EACC6713EA666C0044A60F /* AuditElectricityGroomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */; };
-		57EACC6813EA666C0044A60F /* AuditElectricityGroomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */; };
+		57FC7F181665E462000D4571 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57FC7F171665E462000D4571 /* Default-568@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +126,9 @@
 		28D7ACF70DDB3853001CB0EB /* ANUGreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUGreenViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* GreenKey_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenKey_Prefix.pch; sourceTree = "<group>"; };
+		571CF9A01600526500B6C4AF /* AuditElectricityGroomingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuditElectricityGroomingViewController.xib; path = Classes/AuditElectricityGroomingViewController.xib; sourceTree = "<group>"; };
+		573C2F2415DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Compact_Fluorescent_Downlight.jpg; sourceTree = "<group>"; };
+		573C2F2615DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Linear_Fluorescent_Lamp.jpg; sourceTree = "<group>"; };
 		57448ACC13EA335200B24345 /* InitiativesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitiativesViewController.h; sourceTree = "<group>"; };
 		57448ACD13EA335200B24345 /* InitiativesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitiativesViewController.m; sourceTree = "<group>"; };
 		57448ACE13EA335200B24345 /* InitiativesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InitiativesViewController.xib; path = Classes/InitiativesViewController.xib; sourceTree = "<group>"; };
@@ -216,7 +226,6 @@
 		57AD06F913E667B7007CAEEE /* AboutANUGreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutANUGreenViewController.h; sourceTree = "<group>"; };
 		57AD06FA13E667B7007CAEEE /* AboutANUGreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutANUGreenViewController.m; sourceTree = "<group>"; };
 		57AD06FB13E667B7007CAEEE /* AboutANUGreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutANUGreenViewController.xib; path = Classes/AboutANUGreenViewController.xib; sourceTree = "<group>"; };
-		57BF3FD215BFB0B400B763AB /* greenapp-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-80.png"; sourceTree = "<group>"; };
 		57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-40-highres.png"; sourceTree = "<group>"; };
 		57BF3FD615BFB2F900B763AB /* greenapp-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-60.png"; sourceTree = "<group>"; };
 		57BF3FD815BFB50500B763AB /* elecplug-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "elecplug-80.png"; sourceTree = "<group>"; };
@@ -225,9 +234,15 @@
 		57BF3FDE15BFB53500B763AB /* home-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-80.png"; sourceTree = "<group>"; };
 		57BF3FE015BFB54300B763AB /* clipboard-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipboard-80.png"; sourceTree = "<group>"; };
 		57BF3FE215C0D1DB00B763AB /* ANUgreen logo 2011.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ANUgreen logo 2011.jpeg"; sourceTree = "<group>"; };
+		57C28470160C158400A6FF0F /* app-icon-greencalc-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-greencalc-114.png"; sourceTree = "<group>"; };
+		57C28472160C159B00A6FF0F /* app-icon-greencalc-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-greencalc-57.png"; sourceTree = "<group>"; };
+		57C28474160C162500A6FF0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		57C28476160C169E00A6FF0F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		57C4C0E416157ABF00C6AE6A /* greenapp-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-60@2x.png"; sourceTree = "<group>"; };
+		57C4C0E816157BEF00C6AE6A /* app-splash-h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-splash-h@2x.png"; path = "assets/Images/app-splash-h@2x.png"; sourceTree = "<group>"; };
 		57EACC6413EA666C0044A60F /* AuditElectricityGroomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditElectricityGroomingViewController.h; sourceTree = "<group>"; };
 		57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditElectricityGroomingViewController.m; sourceTree = "<group>"; };
-		57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuditElectricityGroomingViewController.xib; path = /Users/victor/Developer/greenkey/Classes/AuditElectricityGroomingViewController.xib; sourceTree = "<absolute>"; };
+		57FC7F171665E462000D4571 /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GreenKey-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GreenKey-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +311,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				57C28476160C169E00A6FF0F /* Default.png */,
+				57C28474160C162500A6FF0F /* Default@2x.png */,
+				57FC7F171665E462000D4571 /* Default-568@2x.png */,
+				57C28472160C159B00A6FF0F /* app-icon-greencalc-57.png */,
+				57C28470160C158400A6FF0F /* app-icon-greencalc-114.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -318,7 +338,7 @@
 			children = (
 				57448AD113EA336700B24345 /* Images */,
 				57448ACE13EA335200B24345 /* InitiativesViewController.xib */,
-				57EACC6613EA666C0044A60F /* AuditElectricityGroomingViewController.xib */,
+				571CF9A01600526500B6C4AF /* AuditElectricityGroomingViewController.xib */,
 				5777ED6813E82798004E12AC /* AuditElectricityCommunicationsViewController.xib */,
 				5777ED7113E827F0004E12AC /* AuditElectricityEntertainmentViewController.xib */,
 				5777ED5513E8266A004E12AC /* AuditElectricityKitchenViewController.xib */,
@@ -350,11 +370,14 @@
 		57448AD113EA336700B24345 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				573C2F2615DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg */,
+				573C2F2415DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg */,
 				57BF3FE215C0D1DB00B763AB /* ANUgreen logo 2011.jpeg */,
 				57A84E7515B7C3120030180C /* 725_ANUgreen_logo_small.jpg */,
 				57A84E7615B7C3120030180C /* anu_web_l.png */,
 				57A84E7715B7C3120030180C /* app-icon-greencalc.png */,
 				57A84E7815B7C3120030180C /* app-splash-h.png */,
+				57C4C0E816157BEF00C6AE6A /* app-splash-h@2x.png */,
 				57A84E7915B7C3120030180C /* app-splash-v-greencalc.png */,
 				57A84E7A15B7C3120030180C /* Blowdryer.1.png */,
 				57A84E7B15B7C3120030180C /* Circular fluorescent lamp.1.png */,
@@ -372,7 +395,7 @@
 				57BF3FDA15BFB50F00B763AB /* gas-80.png */,
 				57A84E8515B7C3120030180C /* greenapp-40.png */,
 				57BF3FD415BFB25000B763AB /* greenapp-40-highres.png */,
-				57BF3FD215BFB0B400B763AB /* greenapp-80.png */,
+				57C4C0E416157ABF00C6AE6A /* greenapp-60@2x.png */,
 				57BF3FD615BFB2F900B763AB /* greenapp-60.png */,
 				57A84E8615B7C3120030180C /* Hair Straightener.1.png */,
 				57A84E8715B7C3120030180C /* Halogen Downlight.png */,
@@ -504,7 +527,6 @@
 				5777ED6A13E82798004E12AC /* AuditElectricityCommunicationsViewController.xib in Resources */,
 				5777ED7313E827F0004E12AC /* AuditElectricityEntertainmentViewController.xib in Resources */,
 				57448AD013EA335200B24345 /* InitiativesViewController.xib in Resources */,
-				57EACC6813EA666C0044A60F /* AuditElectricityGroomingViewController.xib in Resources */,
 				57A84EA115B7C3120030180C /* 725_ANUgreen_logo_small.jpg in Resources */,
 				57A84EA215B7C3120030180C /* anu_web_l.png in Resources */,
 				57A84EA315B7C3120030180C /* app-icon-greencalc.png in Resources */,
@@ -516,7 +538,6 @@
 				57A84EA915B7C3120030180C /* Coffee Maker.png in Resources */,
 				57A84EAA15B7C3120030180C /* Compact Fluorescent downlight.1.png in Resources */,
 				57A84EAB15B7C3120030180C /* Compact Fluorescent lamp.png in Resources */,
-				57A84EAC15B7C3120030180C /* Default.png in Resources */,
 				57A84EAD15B7C3120030180C /* Desktop.1.png in Resources */,
 				57A84EAE15B7C3120030180C /* DVD.1.png in Resources */,
 				57A84EAF15B7C3120030180C /* elecplug-40.png in Resources */,
@@ -554,7 +575,6 @@
 				57A84EF715B7C33B0030180C /* LICENSE in Resources */,
 				57A84EFD15B7C33B0030180C /* README.md in Resources */,
 				5745396015B7E276001D34A5 /* light-80.png in Resources */,
-				57BF3FD315BFB0B400B763AB /* greenapp-80.png in Resources */,
 				57BF3FD515BFB25000B763AB /* greenapp-40-highres.png in Resources */,
 				57BF3FD715BFB2F900B763AB /* greenapp-60.png in Resources */,
 				57BF3FD915BFB50500B763AB /* elecplug-80.png in Resources */,
@@ -563,6 +583,16 @@
 				57BF3FDF15BFB53500B763AB /* home-80.png in Resources */,
 				57BF3FE115BFB54300B763AB /* clipboard-80.png in Resources */,
 				57BF3FE315C0D1DB00B763AB /* ANUgreen logo 2011.jpeg in Resources */,
+				573C2F2515DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg in Resources */,
+				573C2F2715DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg in Resources */,
+				571CF9A11600526500B6C4AF /* AuditElectricityGroomingViewController.xib in Resources */,
+				57C28471160C158400A6FF0F /* app-icon-greencalc-114.png in Resources */,
+				57C28473160C159B00A6FF0F /* app-icon-greencalc-57.png in Resources */,
+				57C28475160C162500A6FF0F /* Default@2x.png in Resources */,
+				57C28477160C169E00A6FF0F /* Default.png in Resources */,
+				57C4C0E516157ABF00C6AE6A /* greenapp-60@2x.png in Resources */,
+				57C4C0E916157BEF00C6AE6A /* app-splash-h@2x.png in Resources */,
+				57FC7F181665E462000D4571 /* Default-568@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +675,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_NAME = GreenKey;
 				PROVISIONING_PROFILE = "E2968ECD-AB82-4EBC-AC92-C028762DE7D3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E2968ECD-AB82-4EBC-AC92-C028762DE7D3";
 				SDKROOT = iphoneos;
@@ -662,6 +693,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = GreenKey;
 				PROVISIONING_PROFILE = "E2968ECD-AB82-4EBC-AC92-C028762DE7D3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E2968ECD-AB82-4EBC-AC92-C028762DE7D3";
 				SDKROOT = iphoneos;

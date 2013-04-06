@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AuditWaterViewController;
+
+@protocol AuditWaterViewControllerDelegate
+- (void)auditWaterViewControllerDidDone: (AuditWaterViewController *)controller;
+@end
 
 
 @interface AuditWaterViewController : UIViewController <UITextFieldDelegate> {
@@ -23,6 +28,8 @@
     
 }
 
+@property (nonatomic, strong) id <AuditWaterViewControllerDelegate> delegate;
+
 @property (retain) IBOutlet UITextField *showerField;
 @property (retain) IBOutlet UITextField *tapField;
 @property (retain) IBOutlet UITextField *halfflushField;
@@ -30,5 +37,13 @@
 @property (retain) IBOutlet UITextField *washField;
 @property (retain) IBOutlet UISegmentedControl *coldwashField;
 @property (retain) IBOutlet UISegmentedControl *fullwashField;
+
+@property (nonatomic, strong) NSArray *minutesList;
+@property (nonatomic, strong) NSArray *numbersList;
+
+- (IBAction)selectMinutes:(id)sender;
+- (IBAction)selectNumbers:(id)sender;
+
+- (void)doneButtonClicked;
 
 @end

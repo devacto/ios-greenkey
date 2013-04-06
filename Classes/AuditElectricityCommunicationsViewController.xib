@@ -1039,7 +1039,7 @@
 								<reference key="IBUIFont" ref="944937109"/>
 							</object>
 						</object>
-						<string key="NSFrameSize">{320, 677}</string>
+						<string key="NSFrame">{{0, -108}, {320, 677}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="10263274"/>
@@ -1071,51 +1071,11 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">view</string>
+						<string key="label">shutdownField</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="844108499"/>
+						<reference key="destination" ref="433169459"/>
 					</object>
-					<int key="connectionID">93</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">laptopField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="738286712"/>
-					</object>
-					<int key="connectionID">94</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">desktopField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="890304284"/>
-					</object>
-					<int key="connectionID">95</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">printerField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="275242130"/>
-					</object>
-					<int key="connectionID">96</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">scannerField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="33896539"/>
-					</object>
-					<int key="connectionID">97</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">mobileField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="200939343"/>
-					</object>
-					<int key="connectionID">98</int>
+					<int key="connectionID">100</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -1127,11 +1087,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">shutdownField</string>
+						<string key="label">printerField</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="433169459"/>
+						<reference key="destination" ref="275242130"/>
 					</object>
-					<int key="connectionID">100</int>
+					<int key="connectionID">96</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">desktopField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="890304284"/>
+					</object>
+					<int key="connectionID">95</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -1142,6 +1110,46 @@
 					<int key="connectionID">101</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="844108499"/>
+					</object>
+					<int key="connectionID">93</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mobileField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="200939343"/>
+					</object>
+					<int key="connectionID">98</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">scannerField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="33896539"/>
+					</object>
+					<int key="connectionID">97</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">laptopField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="738286712"/>
+					</object>
+					<int key="connectionID">94</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="738286712"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">108</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectHours:</string>
 						<reference key="source" ref="738286712"/>
@@ -1149,6 +1157,14 @@
 						<int key="IBEventType">1</int>
 					</object>
 					<int key="connectionID">102</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="890304284"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">109</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1169,6 +1185,14 @@
 					<int key="connectionID">104</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="275242130"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">110</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectHours:</string>
 						<reference key="source" ref="33896539"/>
@@ -1176,6 +1200,14 @@
 						<int key="IBEventType">1</int>
 					</object>
 					<int key="connectionID">105</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="33896539"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">111</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1187,6 +1219,14 @@
 					<int key="connectionID">106</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="200939343"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">112</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectHours:</string>
 						<reference key="source" ref="967530004"/>
@@ -1194,6 +1234,14 @@
 						<int key="IBEventType">1</int>
 					</object>
 					<int key="connectionID">107</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="967530004"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">113</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1261,12 +1309,10 @@
 							<reference ref="602009481"/>
 							<reference ref="376086314"/>
 							<reference ref="368336230"/>
-							<reference ref="890304284"/>
 							<reference ref="266199859"/>
 							<reference ref="787391796"/>
 							<reference ref="638172126"/>
 							<reference ref="765405980"/>
-							<reference ref="738286712"/>
 							<reference ref="1012579279"/>
 							<reference ref="769016603"/>
 							<reference ref="601790660"/>
@@ -1275,6 +1321,8 @@
 							<reference ref="179060352"/>
 							<reference ref="704561116"/>
 							<reference ref="511283215"/>
+							<reference ref="738286712"/>
+							<reference ref="890304284"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -1424,11 +1472,6 @@
 						<reference key="parent" ref="844108499"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">51</int>
-						<reference key="object" ref="890304284"/>
-						<reference key="parent" ref="844108499"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">50</int>
 						<reference key="object" ref="266199859"/>
 						<reference key="parent" ref="844108499"/>
@@ -1446,11 +1489,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">47</int>
 						<reference key="object" ref="765405980"/>
-						<reference key="parent" ref="844108499"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">46</int>
-						<reference key="object" ref="738286712"/>
 						<reference key="parent" ref="844108499"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1491,6 +1529,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">92</int>
 						<reference key="object" ref="511283215"/>
+						<reference key="parent" ref="844108499"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">46</int>
+						<reference key="object" ref="738286712"/>
+						<reference key="parent" ref="844108499"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">51</int>
+						<reference key="object" ref="890304284"/>
 						<reference key="parent" ref="844108499"/>
 					</object>
 				</object>
@@ -1614,7 +1662,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">107</int>
+			<int key="maxID">113</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class AuditElectricityCommunicationsViewController;
 
-@interface AuditElectricityCommunicationsViewController : UIViewController <UITextFieldDelegate> {
+@protocol AuditElectricityCommunicationsViewControllerDelegate
+- (void)auditElectricityCommunicationsViewControllerDidDone: (AuditElectricityCommunicationsViewController *)controller;
+@end
+
+@interface AuditElectricityCommunicationsViewController : UIViewController {
 
     @private
     IBOutlet UITextField *laptopField;
@@ -21,6 +26,8 @@
     IBOutlet UISegmentedControl *shutdownField;
     IBOutlet UISegmentedControl *turnoffField;
 }
+
+@property (nonatomic, strong) id <AuditElectricityCommunicationsViewControllerDelegate> delegate;
 
 @property (retain) IBOutlet UITextField *laptopField;
 @property (retain) IBOutlet UITextField *desktopField;
@@ -34,6 +41,7 @@
 @property (nonatomic, strong) NSArray *hoursList;
 
 - (IBAction)selectHours:(id)sender;
+- (void)doneButtonClicked;
 
 
 @end

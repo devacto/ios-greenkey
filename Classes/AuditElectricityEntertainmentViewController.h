@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class AuditElectricityEntertainmentViewController;
+
+@protocol AuditElectricityEntertainmentViewControllerDelegate
+- (void)auditElectricityEntertainmentViewControllerDidDone: (AuditElectricityEntertainmentViewController *)controller;
+@end
+
 
 @interface AuditElectricityEntertainmentViewController : UIViewController <UITextFieldDelegate> {
 
@@ -21,6 +27,8 @@
     
 }
 
+@property (nonatomic, strong) id <AuditElectricityEntertainmentViewControllerDelegate> delegate;
+
 @property (retain) IBOutlet UITextField *lcdtvField;
 @property (retain) IBOutlet UITextField *plasmatvField;
 @property (retain) IBOutlet UITextField *standardtvField;
@@ -29,5 +37,8 @@
 @property (retain) IBOutlet UITextField *consoleField;
 
 @property (nonatomic, strong) NSArray *hoursList;
+
+- (IBAction)selectHours:(id)sender;
+- (void)doneButtonClicked;
 
 @end
