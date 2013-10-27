@@ -13,8 +13,6 @@
 
 @synthesize window;
 
-
-#pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -25,6 +23,7 @@
 	ANUGreenViewController *agvc = [[ANUGreenViewController alloc] init];
 	[navcon pushViewController:agvc animated:NO];
 	[agvc release];
+    [window setRootViewController:navcon];
 	[window addSubview:navcon.view];
     [window makeKeyAndVisible];
     return YES;
