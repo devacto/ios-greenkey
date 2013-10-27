@@ -62,9 +62,10 @@
 }
 
 - (void)viewDidLoad {
-	
+	[super viewDidLoad];
 	self.title = @"Green Key";
-	
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 @end
