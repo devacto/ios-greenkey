@@ -258,7 +258,7 @@
 		cell.textLabel.text = [self.menuResult	objectAtIndex:indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.backgroundColor = colorVictor;
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
         cell.textLabel.textColor = colorWhite;
         
