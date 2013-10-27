@@ -37,6 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
 	self.title = @"Calculate";
     
     // Calculating Electricity
