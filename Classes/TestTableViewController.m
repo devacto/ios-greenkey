@@ -270,6 +270,7 @@
     return cell;
 }
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
 	return [self.sections objectAtIndex:section];
