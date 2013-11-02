@@ -1,295 +1,0 @@
-TANUGreen
-v7
-r0
-t333525672.435186
-cCheck dependencies
-cProcessInfoPlistFile /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/Info.plist ANUGreen-Info.plist
-cCompileXIB /Users/victor/Developer/ANUGreen/MainWindow.xib
-cCompileXIB /Users/victor/Developer/ANUGreen/ANUGreenViewController.xib
-cProcessPCH /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch.gch ANUGreen_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/main.o /Users/victor/Developer/ANUGreen/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenAppDelegate.o /Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenViewController.o /Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenBrain.o /Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen normal i386
-cGenerateDSYMFile /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app.dSYM /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen
-cTouch /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
-c000000004D5C9B4E0000000000000110
-t1297914702
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004D54CFFA00000000002999B0
-t1297403898
-s2726320
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004D54CFE5000000000029DA70
-t1297403877
-s2742896
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004D54CFB80000000000001466
-t1297403832
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004D5615B40000000000000AA1
-t1297487284
-s2721
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004D5616030000000000766870
-t1297487363
-s7759984
-
-N/Users/victor/Developer/ANUGreen/ANUGreenBrain.h
-c000000004E30F79600000000000000EE
-t1311831958
-s238
-i<Foundation/Foundation.h>
-
-N/Users/victor/Developer/ANUGreen/ANUGreenBrain.m
-c000000004E30F79600000000000000DB
-t1311831958
-s219
-i"ANUGreenBrain.h"
-
-N/Users/victor/Developer/ANUGreen/ANUGreenViewController.xib
-c000000004E30F6E10000000000001A49
-t1311831777
-s6729
-
-N/Users/victor/Developer/ANUGreen/ANUGreen_Prefix.pch
-c000000004E30F6E100000000000000B9
-t1311831777
-s185
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m
-c000000004E30F79600000000000000DB
-t1311831958
-s219
-i"ANUGreenBrain.h"
-
-N/Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.h
-c000000004E30F6E100000000000001F2
-t1311831777
-s498
-i<UIKit/UIKit.h>
-
-N/Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m
-c000000004E30F6E10000000000000ABC
-t1311831777
-s2748
-i"ANUGreenAppDelegate.h"
-i"ANUGreenViewController.h"
-
-N/Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.h
-c000000004E30F6E100000000000000FE
-t1311831777
-s254
-i<UIKit/UIKit.h>
-
-N/Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m
-c000000004E30F6E100000000000005D2
-t1311831777
-s1490
-i"ANUGreenViewController.h"
-
-N/Users/victor/Developer/ANUGreen/MainWindow.xib
-c000000004E30F6E10000000000004E35
-t1311831777
-s20021
-
-N/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreen.LinkFileList
-c000000004E30FB250000000000000202
-t1311832869
-s514
-
-N/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenAppDelegate.o
-t1311832871
-s51360
-
-N/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenBrain.o
-t1311832871
-s5088
-
-N/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenViewController.o
-t1311832871
-s37956
-
-N/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/main.o
-t1311832871
-s6300
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app
-t1311832872
-s238
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app.dSYM
-t1311832872
-s102
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen
-t1311832872
-s17488
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreenViewController.nib
-t1311832870
-s1269
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/Info.plist
-t1311832869
-s595
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/MainWindow.nib
-t1311832870
-s1683
-
-N/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/PkgInfo
-t1311832869
-s8
-
-N/Users/victor/Developer/ANUGreen/main.m
-c000000004E30F6E10000000000000177
-t1311831777
-s375
-i<UIKit/UIKit.h>
-
-N/var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch.gch
-t1311832871
-s15814064
-
-NANUGreen-Info.plist
-c000000004E30F6E1000000000000038D
-t1311831777
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies333525669#333525669#0(0"0(0#1#0"3343187568374212096#0"0#
-
-CCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenAppDelegate.o /Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s333525671.556173
-e333525671.905267
-r1
-xCompileC
-xbuild/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenAppDelegate.o
-x/Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@70"Compile /Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m333525671#333525671#0(0"0(0#0#62"/Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m8610676832#1906"    cd /Users/victor/Developer/ANUGreen    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-generated-files.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-own-target-headers.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-all-target-headers.hmap -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-project-headers.hmap -F/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -I/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/include -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources/i386 -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources -include /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch -c /Users/victor/Developer/ANUGreen/Classes/ANUGreenAppDelegate.m -o /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenAppDelegate.o0#
-
-CCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenBrain.o /Users/victor/Developer/ANUGreen/ANUGreenBrain.m normal i386 objective-c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenBrain.o /Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s333525671.905372
-e333525671.954449
-r1
-xCompileC
-xbuild/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenBrain.o
-x/Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@67"Compile /Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m333525671#333525671#0(0"0(0#0#59"/Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m8609199488#1897"    cd /Users/victor/Developer/ANUGreen    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-generated-files.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-own-target-headers.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-all-target-headers.hmap -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-project-headers.hmap -F/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -I/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/include -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources/i386 -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources -include /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch -c /Users/victor/Developer/ANUGreen/Classes/../ANUGreenBrain.m -o /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenBrain.o0#
-
-CCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenViewController.o /Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s333525671.885419
-e333525671.955696
-r1
-xCompileC
-xbuild/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenViewController.o
-x/Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@73"Compile /Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m333525671#333525671#0(0"0(0#0#65"/Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m8609458496#1912"    cd /Users/victor/Developer/ANUGreen    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-generated-files.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-own-target-headers.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-all-target-headers.hmap -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-project-headers.hmap -F/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -I/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/include -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources/i386 -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources -include /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch -c /Users/victor/Developer/ANUGreen/Classes/ANUGreenViewController.m -o /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreenViewController.o0#
-
-CCompileC build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/main.o /Users/victor/Developer/ANUGreen/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s333525671.555001
-e333525671.885318
-r1
-xCompileC
-xbuild/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/main.o
-x/Users/victor/Developer/ANUGreen/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@47"Compile /Users/victor/Developer/ANUGreen/main.m333525671#333525671#0(0"0(0#0#39"/Users/victor/Developer/ANUGreen/main.m8609212128#1868"    cd /Users/victor/Developer/ANUGreen    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-generated-files.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-own-target-headers.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-all-target-headers.hmap -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-project-headers.hmap -F/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -I/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/include -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources/i386 -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources -include /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch -c /Users/victor/Developer/ANUGreen/main.m -o /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/victor/Developer/ANUGreen/ANUGreenViewController.xib
-s333525669.878127
-e333525670.292983
-r1
-xCompileXIB
-x/Users/victor/Developer/ANUGreen/ANUGreenViewController.xib
-lSLF07#2@37"CompileXIB ANUGreenViewController.xib333525669#333525670#0(0"0(0#0#59"/Users/victor/Developer/ANUGreen/ANUGreenViewController.xib8604372928#577"    cd /Users/victor/Developer/ANUGreen    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreenViewController.nib /Users/victor/Developer/ANUGreen/ANUGreenViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
-
-CCompileXIB /Users/victor/Developer/ANUGreen/MainWindow.xib
-s333525669.872293
-e333525670.317000
-r1
-xCompileXIB
-x/Users/victor/Developer/ANUGreen/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib333525669#333525670#0(0"0(0#0#47"/Users/victor/Developer/ANUGreen/MainWindow.xib8604481440#553"    cd /Users/victor/Developer/ANUGreen    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/MainWindow.nib /Users/victor/Developer/ANUGreen/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
-
-CGenerateDSYMFile /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app.dSYM /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen
-s333525672.359300
-e333525672.432236
-r1
-xGenerateDSYMFile
-x/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app.dSYM
-x/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen
-lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/ANUGreen.app.dSYM build/Debug-iphonesimulator/ANUGreen.app/ANUGreen333525672#333525672#0(0"0(0#0#82"/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen8609558464#368"    cd /Users/victor/Developer/ANUGreen    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen -o /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app.dSYM0#
-
-CLd /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen normal i386
-s333525671.955765
-e333525672.359196
-r1
-xLd
-x/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen
-xnormal
-xi386
-lSLF07#2@87"Link /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen333525671#333525672#0(0"0(0#0#0"8604236000#875"    cd /Users/victor/Developer/ANUGreen    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -L/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -F/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -filelist /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/Objects-normal/i386/ANUGreen.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/ANUGreen0#
-
-CProcessInfoPlistFile /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/Info.plist ANUGreen-Info.plist
-s333525669.805034
-e333525669.872205
-r1
-xProcessInfoPlistFile
-x/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/Info.plist
-xANUGreen-Info.plist
-lSLF07#2@27"Process ANUGreen-Info.plist333525669#333525669#0(0"0(0#0#52"/Users/victor/Developer/ANUGreen/ANUGreen-Info.plist32933040433463412#464"    cd /Users/victor/Developer/ANUGreen    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility ANUGreen-Info.plist -genpkginfo /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app/Info.plist0#
-
-CProcessPCH /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch.gch ANUGreen_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s333525670.317155
-e333525671.554825
-r1
-xProcessPCH
-x/var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch.gch
-xANUGreen_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@30"Precompile ANUGreen_Prefix.pch333525670#333525671#0(0"0(0#0#52"/Users/victor/Developer/ANUGreen/ANUGreen_Prefix.pch8609359392#1765"    cd /Users/victor/Developer/ANUGreen    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-generated-files.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-own-target-headers.hmap -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-all-target-headers.hmap -iquote /Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/ANUGreen-project-headers.hmap -F/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator -I/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/include -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources/i386 -I/Users/victor/Developer/ANUGreen/build/ANUGreen.build/Debug-iphonesimulator/ANUGreen.build/DerivedSources -c /Users/victor/Developer/ANUGreen/ANUGreen_Prefix.pch -o /var/folders/uM/uMhghAMXF9iW2J5KUQtjX++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/ANUGreen_Prefix-cnzsrfdcpdzahrafviehjrolbszx/ANUGreen_Prefix.pch.gch0#
-
-CTouch /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app
-s333525672.432321
-e333525672.435123
-r1
-xTouch
-x/Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app
-lSLF07#2@79"Touch /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app333525672#333525672#0(0"0(0#0#0"8609223360#267"    cd /Users/victor/Developer/ANUGreen    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/victor/Developer/ANUGreen/build/Debug-iphonesimulator/ANUGreen.app0#
-
