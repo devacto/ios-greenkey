@@ -42,8 +42,6 @@
 	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>HomeViewController</string>
 	<key>UILaunchImageFile</key>
 	<string>Default</string>
 	<key>UIPrerenderedIcon</key>

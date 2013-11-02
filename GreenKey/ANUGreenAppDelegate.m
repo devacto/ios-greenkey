@@ -16,15 +16,12 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Override point for customization after application launch.
+    UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     
-    UINavigationController *navcon = [[UINavigationController alloc] init];
-	HomeViewController *agvc = [[HomeViewController alloc] init];
-	[navcon pushViewController:agvc animated:NO];
-	[agvc release];
     [window setRootViewController:navcon];
-	[window addSubview:navcon.view];
     [window makeKeyAndVisible];
     return YES;
 }
