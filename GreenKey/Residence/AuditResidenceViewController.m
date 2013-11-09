@@ -11,6 +11,8 @@
 
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
+#import "GAITrackedViewController.h"
+
 
 @implementation AuditResidenceViewController
 
@@ -41,7 +43,7 @@
             
             // Send residence data to Google Analytics
             id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:(NSString *)selectedValue value:nil] build]];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"residence_selection" action:@"button_press" label:(NSString *)selectedValue value:nil] build]];
         }
     };
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
@@ -163,6 +165,11 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.screenName = @"Residence Screen";
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadInputs];
@@ -183,7 +190,6 @@
 	self.residenceField = nil;
 	self.wingField = nil;
     self.roomSharingField = nil;
-	
 }
 
 

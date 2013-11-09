@@ -3,7 +3,7 @@
 //  ANUGreen
 //
 //  Created by Victor Hartanto Wibisono on 28/07/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2013 The Australian National University. All rights reserved.
 //
 
 #import "HomeViewController.h"

@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "GAITrackedViewController.h"
+
+
 @class AuditResidenceViewController;
 
 @protocol AuditResidenceViewControllerDelegate
 - (void)auditResidenceViewControllerDidDone:(AuditResidenceViewController *)controller;
 @end
 
-@interface AuditResidenceViewController :  UIViewController <UITextFieldDelegate> {
+@interface AuditResidenceViewController :  GAITrackedViewController <UITextFieldDelegate> {
     
     @private
 		IBOutlet UITextField *residenceField;

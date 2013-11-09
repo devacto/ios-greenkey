@@ -3,7 +3,7 @@
 //  ANUGreen
 //
 //  Created by Victor Hartanto Wibisono on 28/07/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2013 The Australian National University. All rights reserved.
 //
 
 #import "ANUGreenAppDelegate.h"
@@ -70,9 +70,8 @@
 }
 
 - (void)setupGoogleAnalytics {
-    // Data dispatch interval is shown here at 30 seconds.
-    [GAI sharedInstance].dispatchInterval = 30;
-
+    // Data dispatch interval in seconds.
+    [GAI sharedInstance].dispatchInterval = 5;
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-40208576-1"];
 }
