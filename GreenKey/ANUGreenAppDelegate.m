@@ -9,6 +9,9 @@
 #import "ANUGreenAppDelegate.h"
 #import "HomeViewController.h"
 
+// Google Analytics
+#import "GAI.h"
+
 @implementation ANUGreenAppDelegate
 
 @synthesize window;
@@ -17,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [self setupGoogleAnalytics];
     
     UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:homeViewController];
@@ -62,6 +67,14 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void)setupGoogleAnalytics {
+    // Data dispatch interval is shown here at 30 seconds.
+    [GAI sharedInstance].dispatchInterval = 30;
+
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-40208576-1"];
 }
 
 

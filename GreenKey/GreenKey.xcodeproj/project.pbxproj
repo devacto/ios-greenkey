@@ -15,6 +15,9 @@
 		573C2F2515DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 573C2F2415DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg */; };
 		573C2F2715DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 573C2F2615DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg */; };
 		5745396015B7E276001D34A5 /* light-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 5745395F15B7E276001D34A5 /* light-80.png */; };
+		57469DE7182DE379000D3B25 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57469DE6182DE379000D3B25 /* libz.dylib */; };
+		57469DE9182DE381000D3B25 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57469DE8182DE381000D3B25 /* AdSupport.framework */; };
+		57469DEA182DE408000D3B25 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 571D4B9F182DDF9400113E90 /* libGoogleAnalyticsServices.a */; };
 		574A547818247DE30026F11A /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84F0B15B7C4970030180C /* MenuTableViewController.m */; };
 		574A547918247DE90026F11A /* ANUGreenAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ANUGreenAppDelegate.m */; };
 		574A547A18247F4F0026F11A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* HomeViewController.m */; };
@@ -104,6 +107,8 @@
 		57D46E981824B8120054706D /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84ED815B7C33B0030180C /* ActionSheetDistancePicker.m */; };
 		57D46E991824B8120054706D /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EDA15B7C33B0030180C /* ActionSheetStringPicker.m */; };
 		57D46E9A1824B8120054706D /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A84EDC15B7C33B0030180C /* DistancePickerView.m */; };
+		57DAAF92182DD3A800D8FCC0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DAAF91182DD3A800D8FCC0 /* CoreData.framework */; };
+		57DAAF94182DD3B300D8FCC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DAAF93182DD3B300D8FCC0 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,11 +124,14 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* GreenKey_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GreenKey_Prefix.pch; path = ../GreenKey/GreenKey_Prefix.pch; sourceTree = "<group>"; };
 		571CF9A01600526500B6C4AF /* AuditElectricityGroomingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuditElectricityGroomingViewController.xib; path = Electricity/AuditElectricityGroomingViewController.xib; sourceTree = SOURCE_ROOT; };
+		571D4B9F182DDF9400113E90 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "3rd Party/GoogleAnalytics/libGoogleAnalyticsServices.a"; sourceTree = SOURCE_ROOT; };
 		572B076F181D151100ADC63F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		572B0775181D246500ADC63F /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone.png"; path = "Resources/Submission Assets/Default~iphone.png"; sourceTree = SOURCE_ROOT; };
 		573C2F2415DCBB6A008119E9 /* Compact_Fluorescent_Downlight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Compact_Fluorescent_Downlight.jpg; path = Resources/Images/Compact_Fluorescent_Downlight.jpg; sourceTree = SOURCE_ROOT; };
 		573C2F2615DCBC19008119E9 /* Linear_Fluorescent_Lamp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Linear_Fluorescent_Lamp.jpg; path = Resources/Images/Linear_Fluorescent_Lamp.jpg; sourceTree = SOURCE_ROOT; };
 		5745395F15B7E276001D34A5 /* light-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-80.png"; sourceTree = "<group>"; };
+		57469DE6182DE379000D3B25 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		57469DE8182DE381000D3B25 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5777EC7F13E81A01004E12AC /* AuditResidenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditResidenceViewController.h; path = Residence/AuditResidenceViewController.h; sourceTree = SOURCE_ROOT; };
 		5777EC8013E81A01004E12AC /* AuditResidenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditResidenceViewController.m; path = Residence/AuditResidenceViewController.m; sourceTree = SOURCE_ROOT; };
 		5777EC8113E81A01004E12AC /* AuditResidenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuditResidenceViewController.xib; path = Residence/AuditResidenceViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -229,6 +237,16 @@
 		57C28476160C169E00A6FF0F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Resources/Submission Assets/Default.png"; sourceTree = SOURCE_ROOT; };
 		57C4C0E416157ABF00C6AE6A /* greenapp-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenapp-60@2x.png"; sourceTree = "<group>"; };
 		57C4C0E816157BEF00C6AE6A /* app-splash-h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-splash-h@2x.png"; sourceTree = "<group>"; };
+		57DAAF89182DD38900D8FCC0 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "3rd Party/GoogleAnalytics/GAI.h"; sourceTree = SOURCE_ROOT; };
+		57DAAF8A182DD38900D8FCC0 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = "3rd Party/GoogleAnalytics/GAIDictionaryBuilder.h"; sourceTree = SOURCE_ROOT; };
+		57DAAF8B182DD38900D8FCC0 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = "3rd Party/GoogleAnalytics/GAIFields.h"; sourceTree = SOURCE_ROOT; };
+		57DAAF8C182DD38900D8FCC0 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = "3rd Party/GoogleAnalytics/GAILogger.h"; sourceTree = SOURCE_ROOT; };
+		57DAAF8D182DD38900D8FCC0 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "3rd Party/GoogleAnalytics/GAITrackedViewController.h"; sourceTree = SOURCE_ROOT; };
+		57DAAF8E182DD38900D8FCC0 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "3rd Party/GoogleAnalytics/GAITracker.h"; sourceTree = SOURCE_ROOT; };
+		57DAAF91182DD3A800D8FCC0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		57DAAF93182DD3B300D8FCC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		57DAAF95182DDEB000D8FCC0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		57DAAF97182DDEB700D8FCC0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		57EACC6413EA666C0044A60F /* AuditElectricityGroomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditElectricityGroomingViewController.h; path = Electricity/AuditElectricityGroomingViewController.h; sourceTree = SOURCE_ROOT; };
 		57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditElectricityGroomingViewController.m; path = Electricity/AuditElectricityGroomingViewController.m; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* GreenKey-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = "GreenKey-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -239,10 +257,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57469DE9182DE381000D3B25 /* AdSupport.framework in Frameworks */,
+				57DAAF94182DD3B300D8FCC0 /* SystemConfiguration.framework in Frameworks */,
+				57DAAF92182DD3A800D8FCC0 /* CoreData.framework in Frameworks */,
 				572B0770181D151100ADC63F /* Social.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				57469DEA182DE408000D3B25 /* libGoogleAnalyticsServices.a in Frameworks */,
+				57469DE7182DE379000D3B25 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +328,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57469DE8182DE381000D3B25 /* AdSupport.framework */,
+				57469DE6182DE379000D3B25 /* libz.dylib */,
+				57DAAF97182DDEB700D8FCC0 /* CFNetwork.framework */,
+				57DAAF95182DDEB000D8FCC0 /* libsqlite3.0.dylib */,
+				57DAAF93182DD3B300D8FCC0 /* SystemConfiguration.framework */,
+				57DAAF91182DD3A800D8FCC0 /* CoreData.framework */,
 				572B076F181D151100ADC63F /* Social.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -435,6 +464,7 @@
 		57AFAB77182470E900AACDA1 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				57DAAF88182DD36E00D8FCC0 /* Google Analytics */,
 				57A84ECD15B7C33B0030180C /* TimCinel-ActionSheetPicker-5937d2f */,
 			);
 			path = "3rd Party";
@@ -549,6 +579,21 @@
 			);
 			path = "Main Menu";
 			sourceTree = "<group>";
+		};
+		57DAAF88182DD36E00D8FCC0 /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				57DAAF89182DD38900D8FCC0 /* GAI.h */,
+				57DAAF8A182DD38900D8FCC0 /* GAIDictionaryBuilder.h */,
+				57DAAF8B182DD38900D8FCC0 /* GAIFields.h */,
+				57DAAF8C182DD38900D8FCC0 /* GAILogger.h */,
+				57DAAF8D182DD38900D8FCC0 /* GAITrackedViewController.h */,
+				57DAAF8E182DD38900D8FCC0 /* GAITracker.h */,
+				571D4B9F182DDF9400113E90 /* libGoogleAnalyticsServices.a */,
+			);
+			name = "Google Analytics";
+			path = "3rd Party/GoogleAnalytics";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -724,6 +769,11 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "GreenKey-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/victor/Developer/Codes/iOS/Production/Greenkey/GreenKey/3rd\\ Party",
+					"/Users/victor/Developer/Codes/iOS/Production/Greenkey/GreenKey/3rd\\ Party/GoogleAnalytics",
+				);
 				PRODUCT_NAME = GreenKey;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -739,7 +789,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "GreenKey-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/victor/Developer/Codes/iOS/Production/Greenkey/GreenKey/3rd\\ Party",
+					"/Users/victor/Developer/Codes/iOS/Production/Greenkey/GreenKey/3rd\\ Party/GoogleAnalytics",
+				);
 				PRODUCT_NAME = GreenKey;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

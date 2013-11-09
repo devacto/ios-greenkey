@@ -9,6 +9,8 @@
 #import "AuditResidenceViewController.h"
 #import "ActionSheetPicker.h"
 
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 
 @implementation AuditResidenceViewController
 
@@ -36,13 +38,16 @@
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         if ([sender respondsToSelector:@selector(setText:)]) {
             [sender performSelector:@selector(setText:) withObject:selectedValue];
+            
+            // Send residence data to Google Analytics
+            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:(NSString *)selectedValue value:nil] build]];
         }
     };
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
     [ActionSheetStringPicker showPickerWithTitle:@"Select a Residence" rows:buildingList initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
-    
 }
 
 - (IBAction)selectAWing:(UIControl *)sender {
