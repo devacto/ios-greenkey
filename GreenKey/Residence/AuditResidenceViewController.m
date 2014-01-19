@@ -9,13 +9,8 @@
 #import "AuditResidenceViewController.h"
 #import "ActionSheetPicker.h"
 
-#import "GAI.h"
-#import "GAIDictionaryBuilder.h"
-#import "GAITrackedViewController.h"
-#import "ApplicationConstants.h"
 
-
-@implementation AuditResidenceViewController : GAITrackedViewController
+@implementation AuditResidenceViewController
 
 @synthesize residenceField;
 @synthesize wingField;
@@ -31,7 +26,6 @@
 @synthesize burtonGarranHallWings;
 @synthesize delegate;
 
-
 #pragma mark - Textfield Actions
 
 // These methods are for the data source of the picker view object
@@ -43,8 +37,8 @@
             [sender performSelector:@selector(setText:) withObject:selectedValue];
             
             // Send residence data to Google Analytics
-            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"residence_selection" action:@"button_press" label:(NSString *)selectedValue value:nil] build]];
+//            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"residence_selection" action:@"button_press" label:(NSString *)selectedValue value:nil] build]];
         }
     };
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
@@ -93,17 +87,17 @@
 #pragma mark - Done Button Event
 
 - (void)doneButtonClicked {
-    [self.delegate auditResidenceViewControllerDidDone:self];
+    [[self delegate] auditResidenceViewControllerDidDone:self];
     [[self navigationController] popViewControllerAnimated:YES];
-    [self sendDataToGoogleAnalytics];
+//    [self sendDataToGoogleAnalytics];
 }
 
-// Send hall results to Google Analytics
-- (void)sendDataToGoogleAnalytics {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGreenKeyHallName value:self.residenceField.text];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-}
+//// Send hall results to Google Analytics
+//- (void)sendDataToGoogleAnalytics {
+//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//    [tracker set:kGreenKeyHallName value:self.residenceField.text];
+//    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+//}
 
 
 #pragma mark - Textfield Delegate
@@ -137,7 +131,6 @@
     }
     
     return value;
-    
 }
 
 #pragma mark - Saving and loading inputs

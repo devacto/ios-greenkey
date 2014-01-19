@@ -68,7 +68,6 @@
     electricitySubtotal = ([[self retrievefromUserDefaultsforKey:@"lighting"] doubleValue]+ [[self retrievefromUserDefaultsforKey:@"kitchen"] doubleValue]+ [[self retrievefromUserDefaultsforKey:@"communication"] doubleValue] + [[self retrievefromUserDefaultsforKey:@"entertainment"] doubleValue] + [[self retrievefromUserDefaultsforKey:@"grooming"] doubleValue]) / 200 * 33;
     
     double waterSubtotal;
-    
     waterSubtotal = [[self retrievefromUserDefaultsforKey:@"water"] doubleValue] / 16000 * 32;
     
     double heatingSubtotal;

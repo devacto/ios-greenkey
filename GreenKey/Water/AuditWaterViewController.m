@@ -9,6 +9,11 @@
 #import "AuditWaterViewController.h"
 #import "ActionSheetPicker.h"
 
+@interface AuditWaterViewController() <UITextFieldDelegate>
+
+@property (strong, nonatomic) NSNumber *waterSubtotal;
+
+@end
 
 @implementation AuditWaterViewController
 
@@ -145,10 +150,9 @@
         coldwashValue = 1.00;
     }
         
-    double waterSubtotal;
-    waterSubtotal = ((showerValue + tapValue + halfflushValue + fullflushValue) * 30) + (washValue * 4) + fullwashValue + coldwashValue;
+    self.waterSubtotal = [NSNumber numberWithDouble:((showerValue + tapValue + halfflushValue + fullflushValue) * 30) + (washValue * 4) + fullwashValue + coldwashValue];
     
-    [self saveNumberToUserDefaults:[NSNumber numberWithDouble:waterSubtotal] forKey:@"water"];
+    [self saveNumberToUserDefaults:self.waterSubtotal forKey:@"water"];
 }
 
 
@@ -157,7 +161,16 @@
 - (void)doneButtonClicked {
     [self.delegate auditWaterViewControllerDidDone:self];
     [[self navigationController] popViewControllerAnimated:YES];
+//    [self sendDataToGoogleAnalytics];
 }
+
+//// Send hall results to Google Analytics
+//- (void)sendDataToGoogleAnalytics {
+//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+//    [tracker set:<#(NSString *)parameterName#> value:<#(NSString *)value#>];
+//    [tracker set:kGreenKeyHallName value:[NSString stringWithFormat:@"%f", self.waterSubtotal]];
+//    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+//}
 
 #pragma mark - View lifecycle
 

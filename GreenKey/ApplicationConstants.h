@@ -1,5 +1,5 @@
 //
-//  AuditResidenceViewController.m
+//  ApplicationConstants.h
 //  ANUGreen
 //
 //  Created by Victor Hartanto Wibisono on 2/08/11.
@@ -7,3 +7,5 @@
 //
 
 static NSString * const kGreenKeyHallName = @"Hall";
+static NSString * const kWaterScore = @"Water Score";
+static NSString *
