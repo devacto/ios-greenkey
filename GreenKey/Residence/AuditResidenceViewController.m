@@ -8,6 +8,9 @@
 
 #import "AuditResidenceViewController.h"
 #import "ActionSheetPicker.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
+#import "GAI.h"
 
 
 @implementation AuditResidenceViewController
@@ -35,10 +38,6 @@
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         if ([sender respondsToSelector:@selector(setText:)]) {
             [sender performSelector:@selector(setText:) withObject:selectedValue];
-            
-            // Send residence data to Google Analytics
-//            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"residence_selection" action:@"button_press" label:(NSString *)selectedValue value:nil] build]];
         }
     };
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
@@ -89,15 +88,14 @@
 - (void)doneButtonClicked {
     [[self delegate] auditResidenceViewControllerDidDone:self];
     [[self navigationController] popViewControllerAnimated:YES];
-//    [self sendDataToGoogleAnalytics];
+    [self sendDataToGoogleAnalytics];
 }
 
-//// Send hall results to Google Analytics
-//- (void)sendDataToGoogleAnalytics {
-//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//    [tracker set:kGreenKeyHallName value:self.residenceField.text];
-//    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-//}
+// Send hall results to Google Analytics
+- (void)sendDataToGoogleAnalytics {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:@"residence_selection" value:self.residenceField.text] build]];
+}
 
 
 #pragma mark - Textfield Delegate
