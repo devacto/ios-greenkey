@@ -8,6 +8,9 @@
 
 #import "AuditWaterViewController.h"
 #import "ActionSheetPicker.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
+#import "GAI.h"
 
 @interface AuditWaterViewController() <UITextFieldDelegate>
 
@@ -161,16 +164,15 @@
 - (void)doneButtonClicked {
     [self.delegate auditWaterViewControllerDidDone:self];
     [[self navigationController] popViewControllerAnimated:YES];
-//    [self sendDataToGoogleAnalytics];
+    [self sendDataToGoogleAnalytics];
 }
 
-//// Send hall results to Google Analytics
-//- (void)sendDataToGoogleAnalytics {
-//    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//    [tracker set:<#(NSString *)parameterName#> value:<#(NSString *)value#>];
-//    [tracker set:kGreenKeyHallName value:[NSString stringWithFormat:@"%f", self.waterSubtotal]];
-//    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-//}
+// Send hall results to Google Analytics
+- (void)sendDataToGoogleAnalytics {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    double waterPercentageScore = 100 + [self.waterSubtotal doubleValue];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:@"water_percentage_score" value:[NSNumber numberWithDouble:waterPercentageScore]] build]];
+}
 
 #pragma mark - View lifecycle
 
