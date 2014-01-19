@@ -250,6 +250,7 @@
 		57EACC6413EA666C0044A60F /* AuditElectricityGroomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditElectricityGroomingViewController.h; path = Electricity/AuditElectricityGroomingViewController.h; sourceTree = SOURCE_ROOT; };
 		57EACC6513EA666C0044A60F /* AuditElectricityGroomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditElectricityGroomingViewController.m; path = Electricity/AuditElectricityGroomingViewController.m; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* GreenKey-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = "GreenKey-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CF523BC77D21AD01BF767EAE /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +292,7 @@
 				57AFAB781824715600AACDA1 /* About ANUgreen */,
 				57AFAB7E182473F300AACDA1 /* Water */,
 				57AFAB7F182473FD00AACDA1 /* Residence */,
+				CF523BC77D21AD01BF767EAE /* ApplicationConstants.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -328,10 +330,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				57469DE8182DE381000D3B25 /* AdSupport.framework */,
-				57469DE6182DE379000D3B25 /* libz.dylib */,
-				57DAAF97182DDEB700D8FCC0 /* CFNetwork.framework */,
 				57DAAF95182DDEB000D8FCC0 /* libsqlite3.0.dylib */,
+				57469DE6182DE379000D3B25 /* libz.dylib */,
+				57469DE8182DE381000D3B25 /* AdSupport.framework */,
+				57DAAF97182DDEB700D8FCC0 /* CFNetwork.framework */,
 				57DAAF93182DD3B300D8FCC0 /* SystemConfiguration.framework */,
 				57DAAF91182DD3A800D8FCC0 /* CoreData.framework */,
 				572B076F181D151100ADC63F /* Social.framework */,

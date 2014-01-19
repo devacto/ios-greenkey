@@ -12,9 +12,10 @@
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 #import "GAITrackedViewController.h"
+#import "ApplicationConstants.h"
 
 
-@implementation AuditResidenceViewController
+@implementation AuditResidenceViewController : GAITrackedViewController
 
 @synthesize residenceField;
 @synthesize wingField;
@@ -94,6 +95,14 @@
 - (void)doneButtonClicked {
     [self.delegate auditResidenceViewControllerDidDone:self];
     [[self navigationController] popViewControllerAnimated:YES];
+    [self sendDataToGoogleAnalytics];
+}
+
+// Send hall results to Google Analytics
+- (void)sendDataToGoogleAnalytics {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGreenKeyHallName value:self.residenceField.text];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 
@@ -197,6 +206,7 @@
 	[residenceField release];
 	[wingField release];
     [roomSharingField release];
+    [bruceHallWings release];
     [super dealloc];
 }
 

@@ -73,6 +73,7 @@
     // Data dispatch interval in seconds.
     [GAI sharedInstance].dispatchInterval = 5;
     [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelWarning];
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-40208576-1"];
 }
 
