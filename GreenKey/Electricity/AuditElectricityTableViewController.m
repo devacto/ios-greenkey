@@ -104,15 +104,6 @@
     return value;
 }
 
-#pragma mark - Saving and loading inputs
-
-- (void)saveInputs {
-    
-}
-
-- (void)loadInputs {
-    
-}
 
 #pragma mark - View Lifecycle
 
