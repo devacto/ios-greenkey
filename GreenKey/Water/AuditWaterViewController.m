@@ -170,7 +170,7 @@
 // Send hall results to Google Analytics
 - (void)sendDataToGoogleAnalytics {
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    double waterPercentageScore = 100 + [self.waterSubtotal doubleValue];
+    double waterPercentageScore = 100 - [self.waterSubtotal doubleValue];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:@"water_percentage_score" value:[NSNumber numberWithDouble:waterPercentageScore]] build]];
 }
 

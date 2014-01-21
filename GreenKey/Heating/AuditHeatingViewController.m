@@ -8,7 +8,16 @@
 
 #import "AuditHeatingViewController.h"
 #import "ActionSheetPicker.h"
+#import "GAITracker.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 
+
+@interface AuditHeatingViewController()
+
+@property (strong, nonatomic) NSNumber *heatingSubtotal;
+
+@end
 
 @implementation AuditHeatingViewController
 
@@ -161,6 +170,14 @@
 - (void)doneButtonClicked {
     [self.delegate auditHeatingViewControllerDidDone:self];
     [[self navigationController] popViewControllerAnimated:YES];
+    [self sendDataToGoogleAnalytics];
+}
+
+// Send heating results to Google Analytics
+- (void)sendDataToGoogleAnalytics {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    double heatingPercentageScore = 100 - [self.heatingSubtotal doubleValue];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:@"heating_percentage_score" value:[NSNumber numberWithDouble:heatingPercentageScore]] build]];
 }
 
 #pragma mark - Calculating score
@@ -173,28 +190,32 @@
     valveValue = [self.valveField.text doubleValue];
     thermostatValue = [self.thermostatField.text doubleValue];
     
-    double heatingSubtotal;
-    heatingSubtotal = 0;
+    double localHeatingSubtotal;
+    localHeatingSubtotal = 0;
     
     if (thermostatValue > 0) {
-        heatingSubtotal = thermostatValue;
+        localHeatingSubtotal = thermostatValue;
     } else if (valveValue > 0) {
         if (valveValue == 1) {
-            heatingSubtotal = 22;
+            localHeatingSubtotal = 22;
         } else if (valveValue == 2) {
-            heatingSubtotal = 24;
+            localHeatingSubtotal = 24;
         } else if (valveValue == 3) {
-            heatingSubtotal = 26;
+            localHeatingSubtotal = 26;
         } else if (valveValue == 4) {
-            heatingSubtotal = 28;
+            localHeatingSubtotal = 28;
         } else if (valveValue == 5) {
-            heatingSubtotal = 30;
+            localHeatingSubtotal = 30;
         }
     } else {
-        heatingSubtotal = 21;
+        localHeatingSubtotal = 21;
     }
-    
-    [self saveNumberToUserDefaults:[NSNumber numberWithDouble:heatingSubtotal] forKey:@"heating"];
+
+    // Save to private property so that it can be sent to Google Analytics.
+    self.heatingSubtotal = [NSNumber numberWithDouble:localHeatingSubtotal];
+
+    // Save the private property to NSUserDefaults for persistence.
+    [self saveNumberToUserDefaults:self.heatingSubtotal forKey:@"heating"];
 }
 
 #pragma mark - View lifecycle
