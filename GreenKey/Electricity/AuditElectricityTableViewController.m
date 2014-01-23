@@ -78,33 +78,6 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - Saving boolean to user defaults
-
-- (void)saveBOOLToUserDefaults:(BOOL)myResult forKey:(NSString *)myKey {
-    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    
-    if (standardUserDefaults) {
-        [standardUserDefaults setBool:myResult forKey:myKey];
-        [standardUserDefaults synchronize];
-    }
-}
-
-#pragma mark - Loading boolean from user defaults
-
-- (BOOL)retrieveBOOLFromUserDefaultsForKey:(NSString *)key {
-    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    BOOL value = NO;
-    
-    if (standardUserDefaults) {
-        if ([standardUserDefaults objectForKey:key]) {
-            value = [standardUserDefaults boolForKey:key];
-        }
-    }
-    
-    return value;
-}
-
-
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
