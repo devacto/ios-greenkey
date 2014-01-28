@@ -48,7 +48,7 @@
     {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now, make your device has an internet connection and you at least one Facebook account setup"
+                                  message:@"You can't create a post right now, make your device has an internet connection and you at least one Facebook account setup"
                                   delegate:self
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil];
@@ -70,7 +70,7 @@
     electricitySubtotal = ([[self retrievefromUserDefaultsforKey:@"lighting"] doubleValue]+ [[self retrievefromUserDefaultsforKey:@"kitchen"] doubleValue]+ [[self retrievefromUserDefaultsforKey:@"communication"] doubleValue] + [[self retrievefromUserDefaultsforKey:@"entertainment"] doubleValue] + [[self retrievefromUserDefaultsforKey:@"grooming"] doubleValue]) / 200 * 33;
 
     // Track Electricity values on Google Analytics.
-    // FIXME: This needs to be refactored later on for better readibility.
+    // FIXME: This needs to be refactored later on for better readability.
     [self sendDataToGoogleAnalytics:electricitySubtotal];
 
     double waterSubtotal;
