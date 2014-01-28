@@ -22,7 +22,7 @@
 #pragma mark - Visit website button
 
 - (IBAction)visitWebsite:(UIButton *)sender {
-    NSString* launchUrl = @"https://itunes.apple.com/us/book/introduction-to-devout-life/id544596626?mt=11";
+    NSString* launchUrl = @"http://sustainability.anu.edu.au/home";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
 }
 
