@@ -7,6 +7,8 @@
 //
 
 #import "AuditCalculateViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 #import <Social/Social.h>
 
 @implementation AuditCalculateViewController
@@ -66,7 +68,11 @@
     // Calculating Electricity
     double electricitySubtotal;
     electricitySubtotal = ([[self retrievefromUserDefaultsforKey:@"lighting"] doubleValue]+ [[self retrievefromUserDefaultsforKey:@"kitchen"] doubleValue]+ [[self retrievefromUserDefaultsforKey:@"communication"] doubleValue] + [[self retrievefromUserDefaultsforKey:@"entertainment"] doubleValue] + [[self retrievefromUserDefaultsforKey:@"grooming"] doubleValue]) / 200 * 33;
-    
+
+    // Track Electricity values on Google Analytics.
+    // FIXME: This needs to be refactored later on for better readibility.
+    [self sendDataToGoogleAnalytics:electricitySubtotal];
+
     double waterSubtotal;
     waterSubtotal = [[self retrievefromUserDefaultsforKey:@"water"] doubleValue] / 16000 * 32;
     
@@ -89,6 +95,14 @@
     }
     
     self.gradeLabel.text = _resultingGrade;
+}
+
+#pragma mark - Google Analytics
+
+- (void)sendDataToGoogleAnalytics: (double)electricitySubtotal {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    double electricityPercentageScore = 100 - electricitySubtotal;
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action" action:@"button_press" label:@"electricity_percentage_score" value:[NSNumber numberWithDouble:electricityPercentageScore]] build]];
 }
 
 - (void)didReceiveMemoryWarning {

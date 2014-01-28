@@ -120,7 +120,6 @@
     self.fullwashField.selectedSegmentIndex = [[self retrieveStringFromUserDefaultsForKey:@"fullwashField"] integerValue];
 }
 
-
 #pragma mark - Score calculation
 
 - (void)calculateScore {
